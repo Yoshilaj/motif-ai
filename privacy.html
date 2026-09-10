@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>プライバシーポリシー — Motif AI（モティフAI）</title>
-<meta name="description" content="Motif AI（モティフAI）のプライバシーポリシー。映像素材はお使いの Mac の外に送られません。Claude 経由の指示文は Anthropic の規約に従って処理されます。カード情報は Stripe が扱います。">
+<meta name="description" content="Motif AI（モティフAI）のプライバシーポリシー。映像ファイルそのものはアップロードされません。確認用の静止画フレームと Claude 経由の指示文は Anthropic の規約に従って処理されます。カード情報は Stripe が扱います。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="プライバシーポリシー — Motif AI（モティフAI）">
 <meta property="og:description" content="Motif AI が扱う情報と、扱わない情報について。">
@@ -31,16 +31,16 @@
   <p>Motif AI（モティフAI、以下「本サービス」）の運営者 Yoshiharu（以下「当方」）は、本サービスの提供にあたり、お客様の情報を次のとおり取り扱います。</p>
 
   <h2>1. 映像素材について</h2>
-  <p><strong>お客様の映像素材（動画・音声・画像ファイル）は、お使いの Mac の外には送られません。</strong>本サービスは Premiere Pro の中で動作し、素材ファイルそのものを当方や第三者のサーバーにアップロードすることはありません。</p>
+  <p><strong>お客様の映像素材（動画・音声・画像ファイル）そのものが、お使いの Mac の外にアップロードされることはありません。</strong>本サービスは Premiere Pro の中で動作し、素材ファイルを当方や第三者のサーバーに送ることはありません。ただし、次の第 2 項のとおり、編集結果の確認のためにタイムラインの静止画フレームが Claude に送られることがあります。</p>
   <p>編集操作のために本サービスがお使いの Mac 上で処理するのは、次の情報です。</p>
   <ul>
     <li>タイムラインのメタデータ（クリップの位置や長さ、テロップ・字幕のテキストと書式、レイアウト、色などの設定値）</li>
     <li>編集結果を確認するための小さな検証用フレーム（縮小された静止画）</li>
   </ul>
-  <p>これらはお使いの Mac 上でローカルに処理されます。</p>
+  <p>これらはお使いの Mac 上でローカルに処理されます。検証用フレームはお使いの Mac 上のプロジェクトフォルダに保存され、当方のサーバーには送られません。</p>
 
   <h2>2. Claude を通じてやりとりされる情報</h2>
-  <p>本サービスは Anthropic の Claude Desktop のコネクタとして動作します。<strong>お客様が Claude に入力した指示文（テキスト）と、本サービスが Claude に返す応答（タイムラインの状態の要約や操作結果など）は、Anthropic のサーバーに送信され、Anthropic の利用規約およびプライバシーポリシーに従って処理されます。</strong>これは当方ではなく Anthropic とお客様の間の関係に基づくものです。指示文に含めたくない情報（クライアント名など）は、入力しないようご注意ください。</p>
+  <p>本サービスは Anthropic の Claude Desktop のコネクタとして動作します。<strong>お客様が Claude に入力した指示文（テキスト）と、本サービスが Claude に返す応答（タイムラインの状態の要約や操作結果など）は、Anthropic のサーバーに送信され、Anthropic の利用規約およびプライバシーポリシーに従って処理されます。</strong>また、お客様が Claude に編集結果の確認を求めた場合、<strong>タイムラインの静止画フレーム（縮小された 1 枚の画像）が Claude に送られ、同様に Anthropic のサーバーで処理されます</strong>。静止画に写る内容（人物やクライアント情報など）にご注意ください。これは当方ではなく Anthropic とお客様の間の関係に基づくものです。指示文に含めたくない情報（クライアント名など）は、入力しないようご注意ください。</p>
   <p>Anthropic の取り扱いについては、Anthropic が公開するプライバシーポリシーをご確認ください。</p>
 
   <h2>3. 当方が保存する情報</h2>
