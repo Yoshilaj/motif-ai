@@ -3,32 +3,46 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>プライバシーポリシー — Motif AI（モティフAI）</title>
-<meta name="description" content="Motif AI（モティフAI）のプライバシーポリシー。映像ファイルそのものはアップロードされません。クラウド同期では設定と小さな素材のみ。確認用の静止画フレームと Claude 経由の指示文は Anthropic の規約に従って処理されます。カード情報は Stripe が扱います。">
+<meta name="theme-color" content="#0e100e">
+<title>プライバシーポリシー｜Motif AI</title>
+<meta name="description" content="Motif AI（モティフAI）のプライバシーポリシー。映像素材は Mac の外に出ません。Claude・Stripe・クラウド同期で扱う情報と、当方が保存する情報。">
+<link rel="canonical" href="https://motif-ai.app/privacy.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="プライバシーポリシー — Motif AI（モティフAI）">
-<meta property="og:description" content="Motif AI が扱う情報と、扱わない情報について。">
-<meta property="og:url" content="https://yoshilaj.github.io/motif-ai/privacy.html">
+<meta property="og:site_name" content="Motif AI">
+<meta property="og:title" content="プライバシーポリシー｜Motif AI">
+<meta property="og:description" content="Motif AI（モティフAI）のプライバシーポリシー。映像素材は Mac の外に出ません。Claude・Stripe・クラウド同期で扱う情報と、当方が保存する情報。">
+<meta property="og:url" content="https://motif-ai.app/privacy.html">
+<meta property="og:image" content="https://motif-ai.app/assets/og.png">
 <meta property="og:locale" content="ja_JP">
-<link rel="stylesheet" href="style.css">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="site.css">
+<script src="site.js" defer></script>
 </head>
 <body>
+<a class="skip-link" href="#main">本文へ進む</a>
 <header class="site-header">
-  <div class="wrap">
-    <a class="brand" href="./">Motif AI<span class="ja">モティフAI</span></a>
-    <nav class="site-nav">
-      <a href="./#how">仕組み</a>
-      <a href="./#scope">できること</a>
-      <a href="pricing.html">料金</a>
-      <a href="mailto:yoshil061111@gmail.com">お問い合わせ</a>
-    </nav>
+  <div class="container">
+    <a class="wordmark" href="./" aria-label="Motif AI ホーム"><span class="dot" aria-hidden="true"></span>Motif AI<span class="ja">モティフAI</span></a>
+    <nav class="site-nav" aria-label="メインナビゲーション"><a href="./#how">仕組み</a><a href="./#features">できること</a><a href="pricing.html">料金</a><a href="access.html">はじめ方</a><a href="./#faq">FAQ</a></nav>
+    <div class="header-cta"><a class="btn btn-primary btn-sm" href="access.html">早期アクセスに申し込む</a></div>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav">メニュー</button>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="モバイルナビゲーション" hidden><a href="./#how">仕組み</a><a href="./#features">できること</a><a href="pricing.html">料金</a><a href="access.html">はじめ方</a><a href="./#faq">FAQ</a><a class="btn btn-primary" href="access.html">早期アクセスに申し込む</a></nav>
   </div>
 </header>
-
-<main class="wrap">
-  <h1>プライバシーポリシー</h1>
-  <p class="updated">最終更新日：2026年9月11日</p>
-  <p>Motif AI（モティフAI、以下「本サービス」）の運営者 Yoshiharu（以下「当方」）は、本サービスの提供にあたり、お客様の情報を次のとおり取り扱います。</p>
+<main id="main">
+<section class="page-hero">
+  <div class="narrow">
+    <h1>プライバシーポリシー</h1>
+    <p class="updated">最終更新日：2026年9月16日</p>
+  </div>
+</section>
+<section class="section" style="padding-top:8px">
+  <div class="narrow prose">
+<p>Motif AI（モティフAI、以下「本サービス」）の運営者 Yoshiharu（以下「当方」）は、本サービスの提供にあたり、お客様の情報を次のとおり取り扱います。</p>
 
   <h2>1. 映像素材について</h2>
   <p><strong>お客様の映像素材（動画・音声・画像ファイル）そのものが、お使いの Mac の外にアップロードされることはありません。</strong>本サービスは Premiere Pro の中で動作し、素材ファイルを当方や第三者のサーバーに送ることはありません。ただし、第 2 項のとおり編集結果の確認のためにタイムラインの静止画フレームが Claude に送られることがあり、第 3 項のとおりクラウド同期を有効にした場合は素材ライブラリに登録した静止画・効果音などがアップロードされます。</p>
@@ -59,7 +73,7 @@
   <ul>
     <li><strong>メールアドレス</strong> — ライセンスの発行・更新、解約や返金のご連絡、サポート対応のため</li>
     <li><strong>ライセンス情報</strong> — ライセンスキー、有効期間、契約状態</li>
-    <li><strong>お問い合わせの内容</strong> — メールでいただいたご連絡とそのやりとり</li>
+    <li><strong>お問い合わせ・早期アクセス申し込みの内容</strong> — メールでいただいたご連絡、およびウェブサイトの相談フォームから送信された内容（メールアドレス、お名前、記入内容）とそのやりとり</li>
   </ul>
   <p>これらの情報を、お客様の同意なく第三者に提供したり、本サービスの提供以外の目的で利用したりすることはありません。マーケティング目的のメールを送ることもありません。</p>
 
@@ -77,19 +91,24 @@
 
   <h2>9. お問い合わせ</h2>
   <p>運営者：Yoshiharu<br>メール：<a href="mailto:yoshil061111@gmail.com">yoshil061111@gmail.com</a></p>
+  </div>
+</section>
 </main>
-
 <footer class="site-footer">
-  <div class="wrap">
-    <nav>
-      <a href="pricing.html">料金</a>
-      <a href="terms.html">利用規約</a>
-      <a href="privacy.html">プライバシーポリシー</a>
-      <a href="tokushoho.html">特定商取引法に基づく表記</a>
-      <a href="mailto:yoshil061111@gmail.com">お問い合わせ</a>
-    </nav>
-    <p>Adobe、Premiere Pro は Adobe Inc. の商標です。Claude は Anthropic PBC の商標です。Motif AI はいずれとも提携関係にありません。</p>
-    <p>&copy; 2026 Motif AI</p>
+  <div class="container">
+    <div class="top">
+      <a class="wordmark" href="./"><span class="dot" aria-hidden="true"></span>Motif AI<span class="ja">モティフAI</span></a>
+      <nav aria-label="フッターナビゲーション">
+        <a href="pricing.html">料金</a>
+        <a href="access.html">はじめ方</a>
+        <a href="privacy.html">プライバシーポリシー</a>
+        <a href="terms.html">利用規約</a>
+        <a href="tokushoho.html">特定商取引法に基づく表記</a>
+        <a href="mailto:yoshil061111@gmail.com">お問い合わせ</a>
+      </nav>
+    </div>
+    <p class="legal">Motif AI は Adobe Premiere Pro のパネルと Anthropic Claude Desktop のコネクタとして動作する、独立した製品です。Adobe、Premiere Pro は Adobe Inc. の商標です。Claude は Anthropic PBC の商標です。Motif AI はいずれとも提携関係にありません。ページ内の人物写真・映像は、機能を説明するための生成イメージです。</p>
+    <p class="copy">© 2026 Motif AI</p>
   </div>
 </footer>
 </body>

@@ -1,39 +1,35 @@
-# Motif AI — website
+# motif-ai.app
 
-Static site for Motif AI (モティフAI), served at <https://yoshilaj.github.io/motif-ai/>.
+Motif AI（モティフAI）の公式サイト。GitHub Pages で `main` のルートをそのまま配信する静的サイトです。ビルド・依存・外部ライブラリーはありません。
 
-Plain HTML + one CSS file. No framework, no build step, no external scripts, no analytics.
-
-## Files
-
-| File | Purpose |
+| ファイル | 内容 |
 |---|---|
-| `index.html` | Top page: what it does, how it works, scope, price card, early-access CTA, short English section |
-| `pricing.html` | Price, billing, cancellation and refund summary, requirements |
-| `tokushoho.html` | 特定商取引法に基づく表記 |
-| `privacy.html` | プライバシーポリシー |
-| `terms.html` | 利用規約 (incl. キャンセル・返金ポリシー, §5) |
-| `404.html` | Not-found page (GitHub Pages serves it automatically) |
-| `style.css` | The only stylesheet |
-| `.nojekyll` | Tells GitHub Pages to serve files as-is (no Jekyll processing) |
+| `index.html` | トップページ |
+| `pricing.html` | 料金 |
+| `access.html` | はじめ方（Stripe での申し込み・相談フォーム・インストール手順） |
+| `thanks.html` | Stripe 決済後の戻り先 |
+| `privacy.html` / `terms.html` / `tokushoho.html` | プライバシーポリシー・利用規約・特定商取引法に基づく表記 |
+| `404.html` | GitHub Pages の 404 |
+| `site.css` / `site.js` | 全ページ共通のスタイルと、メニュー・動画・相談フォームのスクリプト |
+| `assets/` | 画像・動画（Higgsfield で生成したイメージ素材を web 用に変換したもの）、favicon、OG 画像 |
+| `CNAME` | カスタムドメイン `motif-ai.app` |
 
-All links between pages are relative, so the site works under the `/motif-ai/` sub-path. The one exception is `404.html`, which uses absolute `/motif-ai/...` paths because GitHub serves it for any missing URL, including nested ones.
+## プレビュー
 
-## Publishing
+```sh
+python3 -m http.server 4173 --bind 127.0.0.1
+```
 
-1. Create the GitHub repository `yoshilaj/motif-ai` (public).
-2. Push this directory to its `main` branch:
-   ```sh
-   git remote add origin git@github.com:yoshilaj/motif-ai.git
-   git push -u origin main
-   ```
-3. In the repository, open **Settings → Pages**. Under **Build and deployment**, set **Source** to *Deploy from a branch*, choose branch `main` and folder `/ (root)`, then save.
-4. After a minute or two the site is live at `https://yoshilaj.github.io/motif-ai/`.
+`http://127.0.0.1:4173/` を開きます。
 
-Every later push to `main` redeploys automatically.
+## 外部との接点
 
-## Editing
+- **申し込み** — `access.html` の「Stripe で申し込む」は Stripe Payment Link（本番）。決済後は `thanks.html` に戻ります。
+- **相談フォーム** — `access.html` の `#access-form` は `https://motif-ai-license.fly.dev/v1/access/request` に JSON を POST します（ライセンスサービス `apps/backend`、CORS は `motif-ai.app` のみ許可）。送信内容はサービスの volume に保存され、Resend で運営者へメールされます。
+- **フォント** — Google Fonts（Noto Sans JP / Inter）。それ以外の外部読み込み、アクセス解析、Cookie はありません。
 
-- Price, refund wording and contact address appear on several pages (`index.html`, `pricing.html`, `tokushoho.html`, `terms.html`). Change them together.
-- Update the 最終更新日 line on `tokushoho.html`, `privacy.html` and `terms.html` when their text changes.
-- Preview locally with any static server, e.g. `python3 -m http.server 8000` from this directory, then open `http://localhost:8000/`. (The 404 page's absolute links will only resolve once deployed under `/motif-ai/`.)
+## 更新するとき
+
+- 全ページの `<head>`・ヘッダー・フッターは同じ構造です。ナビやフッターを変えるときは全ページに同じ変更を入れてください。
+- 料金・返金条件は `index.html`・`pricing.html`・`terms.html`・`tokushoho.html` の四か所にあります。変えるときは四つとも。
+- ページ内の人物写真・映像は生成イメージで、フッターにその旨を明記しています。実機のスクリーンショットに差し替える場合は `assets/` の同名ファイルを置き換えてください。

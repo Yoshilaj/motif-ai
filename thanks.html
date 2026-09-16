@@ -3,35 +3,72 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>お申し込みありがとうございます — Motif AI（モティフAI）</title>
-<meta name="description" content="Motif AI のお申し込みが完了しました。">
+<meta name="theme-color" content="#0e100e">
+<title>お申し込みありがとうございます｜Motif AI</title>
+<meta name="description" content="Motif AI のお申し込みが完了しました。次のステップをご案内します。">
 <meta name="robots" content="noindex">
-<link rel="stylesheet" href="/motif-ai/style.css">
+<link rel="canonical" href="https://motif-ai.app/thanks.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Motif AI">
+<meta property="og:title" content="お申し込みありがとうございます｜Motif AI">
+<meta property="og:description" content="Motif AI のお申し込みが完了しました。次のステップをご案内します。">
+<meta property="og:url" content="https://motif-ai.app/thanks.html">
+<meta property="og:image" content="https://motif-ai.app/assets/og.png">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="site.css">
+<script src="site.js" defer></script>
 </head>
 <body>
+<a class="skip-link" href="#main">本文へ進む</a>
 <header class="site-header">
-  <div class="wrap">
-    <a class="brand" href="/motif-ai/">Motif AI<span class="ja">モティフAI</span></a>
+  <div class="container">
+    <a class="wordmark" href="./" aria-label="Motif AI ホーム"><span class="dot" aria-hidden="true"></span>Motif AI<span class="ja">モティフAI</span></a>
+    <nav class="site-nav" aria-label="メインナビゲーション"><a href="./#how">仕組み</a><a href="./#features">できること</a><a href="pricing.html">料金</a><a href="access.html">はじめ方</a><a href="./#faq">FAQ</a></nav>
+    <div class="header-cta"><a class="btn btn-primary btn-sm" href="access.html">早期アクセスに申し込む</a></div>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav">メニュー</button>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="モバイルナビゲーション" hidden><a href="./#how">仕組み</a><a href="./#features">できること</a><a href="pricing.html">料金</a><a href="access.html">はじめ方</a><a href="./#faq">FAQ</a><a class="btn btn-primary" href="access.html">早期アクセスに申し込む</a></nav>
   </div>
 </header>
-
-<main class="wrap">
-  <h1>お申し込みありがとうございます</h1>
-  <p>Motif AI（モティフAI）の決済が完了しました。ご登録のメールアドレスに、ライセンスの有効化と Claude Desktop での設定方法をご案内します。数分経っても届かない場合は、迷惑メールフォルダをご確認のうえ、下記までご連絡ください。</p>
-  <p>ベータ期間中は、動作しない場面や対応していない操作があります。お気づきの点はどんな小さなことでもお知らせいただけると助かります。</p>
-  <p><a class="btn" href="/motif-ai/">トップページへ戻る</a></p>
-  <p><small>お問い合わせ： <a href="mailto:yoshil061111@gmail.com">yoshil061111@gmail.com</a>。解約・返金は<a href="/motif-ai/terms.html#refund">利用規約 第5条</a>をご覧ください。</small></p>
+<main id="main">
+<section class="page-hero">
+  <div class="narrow">
+    <span class="eyebrow">お申し込み完了</span>
+    <h1>ありがとうございます。</h1>
+    <p>Motif AI の決済が完了しました。決済に使ったメールアドレスへ、ダウンロードリンクと手順をお送りします。</p>
+  </div>
+</section>
+<section class="section" style="padding-top:8px">
+  <div class="narrow">
+    <div class="timeline">
+      <div class="tl-step"><div><h3>ご案内メールを確認</h3><p>数分経っても届かない場合は、迷惑メールフォルダをご確認のうえ <a class="text-link" href="mailto:yoshil061111@gmail.com">yoshil061111@gmail.com</a> までご連絡ください。</p></div></div>
+      <div class="tl-step"><div><h3>インストールして、パネルでサインイン</h3><p>手順は<a class="text-link" href="access.html">はじめ方</a>にまとめています。パスワードは、パネルの「パスワードを設定・再設定」から決済に使ったメールアドレスで設定します。</p></div></div>
+      <div class="tl-step"><div><h3>気づいたことは、なんでも</h3><p>ベータ期間中は、動作しない場面や対応していない操作があります。小さなことでもお知らせいただけると助かります。</p></div></div>
+    </div>
+    <p class="fine" style="margin-top:24px">解約・返金は<a class="text-link" href="terms.html#refund">利用規約 第5条</a>をご覧ください。初回契約は 7 日以内なら全額返金します。</p>
+    <p style="margin-top:20px"><a class="btn btn-secondary" href="./">トップページへ戻る</a></p>
+  </div>
+</section>
 </main>
-
 <footer class="site-footer">
-  <div class="wrap">
-    <nav>
-      <a href="/motif-ai/pricing.html">料金</a>
-      <a href="/motif-ai/terms.html">利用規約</a>
-      <a href="/motif-ai/privacy.html">プライバシーポリシー</a>
-      <a href="/motif-ai/tokushoho.html">特定商取引法に基づく表記</a>
-    </nav>
-    <p>&copy; 2026 Motif AI</p>
+  <div class="container">
+    <div class="top">
+      <a class="wordmark" href="./"><span class="dot" aria-hidden="true"></span>Motif AI<span class="ja">モティフAI</span></a>
+      <nav aria-label="フッターナビゲーション">
+        <a href="pricing.html">料金</a>
+        <a href="access.html">はじめ方</a>
+        <a href="privacy.html">プライバシーポリシー</a>
+        <a href="terms.html">利用規約</a>
+        <a href="tokushoho.html">特定商取引法に基づく表記</a>
+        <a href="mailto:yoshil061111@gmail.com">お問い合わせ</a>
+      </nav>
+    </div>
+    <p class="legal">Motif AI は Adobe Premiere Pro のパネルと Anthropic Claude Desktop のコネクタとして動作する、独立した製品です。Adobe、Premiere Pro は Adobe Inc. の商標です。Claude は Anthropic PBC の商標です。Motif AI はいずれとも提携関係にありません。ページ内の人物写真・映像は、機能を説明するための生成イメージです。</p>
+    <p class="copy">© 2026 Motif AI</p>
   </div>
 </footer>
 </body>

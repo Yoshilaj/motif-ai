@@ -3,106 +3,335 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Motif AI（モティフAI）— Premiere Pro のための AI 編集アシスタント</title>
-<meta name="description" content="Motif AI は Adobe Premiere Pro 向けの AI 編集アシスタントです。テロップや字幕のスタイル・配置・色といった「作り方」を記憶し、新しい素材に再適用します。すべてタイムライン上のネイティブオブジェクトとして生成されるため、手で編集できます。早期アクセス（ベータ）、月額 2,980 円（税込）。">
+<meta name="theme-color" content="#0e100e">
+<title>Motif AI｜いつもの編集を、Premiere Pro が覚えている。</title>
+<meta name="description" content="テロップ・カット・SE・色。あなたが一度組み立てた編集を Motif AI が記憶し、次の素材に同じ手つきで再現します。結果はすべて Premiere Pro の編集可能なタイムライン。macOS・ベータ・月額 2,980 円。">
+<link rel="canonical" href="https://motif-ai.app/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Motif AI（モティフAI）— Premiere Pro のための AI 編集アシスタント">
-<meta property="og:description" content="編集の「作り方」を記憶し、新しい素材に再適用する Premiere Pro 向け AI アシスタント。早期アクセス（ベータ）、月額 2,980 円（税込）。">
-<meta property="og:url" content="https://yoshilaj.github.io/motif-ai/">
+<meta property="og:site_name" content="Motif AI">
+<meta property="og:title" content="Motif AI｜いつもの編集を、Premiere Pro が覚えている。">
+<meta property="og:description" content="テロップ・カット・SE・色。あなたが一度組み立てた編集を Motif AI が記憶し、次の素材に同じ手つきで再現します。結果はすべて Premiere Pro の編集可能なタイムライン。macOS・ベータ・月額 2,980 円。">
+<meta property="og:url" content="https://motif-ai.app/">
+<meta property="og:image" content="https://motif-ai.app/assets/og.png">
 <meta property="og:locale" content="ja_JP">
-<link rel="stylesheet" href="style.css">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="site.css">
+<link rel="preload" href="assets/hero-poster.jpg" as="image">
+<script src="site.js" defer></script>
 </head>
 <body>
+<a class="skip-link" href="#main">本文へ進む</a>
 <header class="site-header">
-  <div class="wrap">
-    <a class="brand" href="./">Motif AI<span class="ja">モティフAI</span></a>
-    <nav class="site-nav">
-      <a href="#how">仕組み</a>
-      <a href="#scope">できること</a>
-      <a href="pricing.html">料金</a>
-      <a href="mailto:yoshil061111@gmail.com">お問い合わせ</a>
-    </nav>
+  <div class="container">
+    <a class="wordmark" href="./" aria-label="Motif AI ホーム"><span class="dot" aria-hidden="true"></span>Motif AI<span class="ja">モティフAI</span></a>
+    <nav class="site-nav" aria-label="メインナビゲーション"><a href="#how">仕組み</a><a href="#features">できること</a><a href="pricing.html">料金</a><a href="access.html">はじめ方</a><a href="#faq">FAQ</a></nav>
+    <div class="header-cta"><a class="btn btn-primary btn-sm" href="access.html">早期アクセスに申し込む</a></div>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav">メニュー</button>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="モバイルナビゲーション" hidden><a href="#how">仕組み</a><a href="#features">できること</a><a href="pricing.html">料金</a><a href="access.html">はじめ方</a><a href="#faq">FAQ</a><a class="btn btn-primary" href="access.html">早期アクセスに申し込む</a></nav>
   </div>
 </header>
+<main id="main">
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="container">
+    <div class="hero-copy">
+      <div class="badge-row">
+        <span class="badge"><span class="dot" aria-hidden="true"></span><b>Premiere Pro</b> パネル</span>
+        <span class="badge"><b>Claude Desktop</b> 連携</span>
+        <span class="badge">macOS</span>
+        <span class="badge">早期アクセス受付中</span>
+      </div>
+      <h1 id="hero-heading">いつもの編集を、<br>Premiere Pro が覚えている。</h1>
+      <p class="lead">テロップの書式、カットの間、SE の置き方、色。あなたが一度組み立てた編集を Motif AI が記憶し、次の素材に同じ手つきで再現します。結果はすべて、いつものタイムライン上の編集できるオブジェクトです。</p>
+      <div class="actions">
+        <a class="btn btn-lime btn-lg" href="access.html">早期アクセスに申し込む</a>
+        <a class="btn btn-secondary btn-lg" href="#how">仕組みを見る</a>
+      </div>
+      <p class="fine">月額 2,980 円（税込）・いつでも解約・初回 7 日間は全額返金</p>
+    </div>
+    <div class="hero-media">
+      <div class="video-wrap">
+        <video autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg" aria-label="スマートフォンを三脚に立て、オフィスで自分の縦動画を撮影している事業主のイメージ映像">
+          <source src="assets/hero.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="hero-overlay" aria-label="Claude Desktop での指示と、Motif AI の適用結果の例">
+        <div class="chat-card user"><div class="who">あなた · Claude Desktop</div>このフォルダの素材を、いつものリール用に編集して。</div>
+        <div class="chat-card"><div class="who"><span class="dot" aria-hidden="true"></span>Motif AI · 適用結果（例）</div>
+          <ul>
+            <li><span>テロップ</span><span>36</span></li>
+            <li><span>カット</span><span>12</span></li>
+            <li><span>静止画・SE</span><span>5</span></li>
+            <li><span>カラーグレード</span><span>適用</span></li>
+            <li><span>すべて</span><span>取り消し可</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="hero-note">映像はイメージです。数値は実際のリール（33 秒）を再現した際の一例です。</p>
+</section>
 
-<main class="wrap">
-  <section class="hero">
-    <span class="badge">早期アクセス（ベータ）</span>
-    <h1>一度作ったテロップや字幕の「作り方」を覚えて、次の素材にもう一度あてる。</h1>
-    <p class="lead">Motif AI は Adobe Premiere Pro 向けの AI 編集アシスタントです。編集者がどのようにスタイルを組み立てたか（テロップ・字幕の書式、レイアウト、色）を記憶し、新しい映像に再適用します。生成されるものはすべて Premiere のネイティブオブジェクトなので、そのまま手で直せますし、取り消しもできます。</p>
-    <p><a class="btn" href="mailto:yoshil061111@gmail.com?subject=Motif%20AI%20%E6%97%A9%E6%9C%9F%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9">早期アクセスに申し込む</a></p>
-    <p><small>現在はベータ版です。機能や対応範囲は予告なく変わることがあります。メールでお申し込みいただいた方に、順次ご案内します。</small></p>
-  </section>
+<section class="trust" aria-label="Motif AI の前提">
+  <div class="container">
+    <div class="item"><b>映像ファイルは Mac の外に出ません</b><span>処理はローカル。動画のアップロードはありません。</span></div>
+    <div class="item"><b>Premiere のネイティブオブジェクト</b><span>書き出しではなく、編集できるタイムラインが残ります。</span></div>
+    <div class="item"><b>すべて取り消し可能</b><span>実行前に検証し、一手ごとに Undo できます。</span></div>
+    <div class="item"><b>覚えるのは、承認したルールだけ</b><span>提案 → あなたが承認 → 次の動画から適用。</span></div>
+  </div>
+</section>
 
-  <section id="how">
-    <h2>どう動くか</h2>
-    <p>Motif AI は単体のアプリではなく、Anthropic の <strong>Claude Desktop</strong> から使うコネクタです。Claude に日本語で指示すると、Motif AI が Premiere Pro の中で編集操作を行います。</p>
-    <ol class="steps">
-      <li>Premiere Pro でいつものようにテロップや字幕を作り、Motif AI にその「作り方」を覚えさせます。</li>
-      <li>新しい素材を開き、Claude Desktop で「前回のスタイルで字幕を入れて」のように指示します。</li>
-      <li>Motif AI がタイムライン上に同じ扱いのオブジェクトを配置します。気に入らなければ普段どおり手で調整するか、取り消してください。</li>
-    </ol>
-    <p><strong>必要なもの：</strong>ご自身の Claude サブスクリプション、Adobe Premiere Pro（macOS・最新版）。Motif AI はこれらを含みません。</p>
-  </section>
+<section class="section" id="why" aria-labelledby="why-heading">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">同じ編集を、毎回ゼロから</span>
+      <h2 id="why-heading">テンプレートは部品を覚える。<br>意図までは、覚えない。</h2>
+      <p>書体、色、位置、行の分け方、SE のタイミング。“いつもの編集”は、数十の小さな判断の積み重ねです。テンプレートに入らないその判断を、動画ごとに手で組み直していませんか。</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card"><div class="icon">T</div><h3>テロップが、編集時間の大半</h3><p>33 秒のリールにテロップが 36 枚。書式と分割の癖を毎回再現する作業が、動画尺の何倍もの時間を食います。</p></div>
+      <div class="card"><div class="icon">A→B</div><h3>「A の編集を、B にも」</h3><p>複数のアカウントを運用していると、一つのアカウントで固めた手つきを、別の素材に載せ替える作業が繰り返し発生します。人に伝えるのも難しい。</p></div>
+      <div class="card"><div class="icon">↺</div><h3>直したことが、次に残らない</h3><p>今日の動画で直した位置やタイミングは、明日の動画には引き継がれません。同じ修正を、同じ場所で、毎回。</p></div>
+    </div>
+  </div>
+</section>
 
-  <section id="scope">
-    <h2>できること・できないこと</h2>
-    <div class="two-col">
+<section class="section" id="how" aria-labelledby="how-heading">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">仕組み</span>
+      <h2 id="how-heading">一本つくる。覚える。<br>次の素材に、同じ手つきで。</h2>
+      <p>Motif AI は、完成した動画を眺めて“それっぽく”真似るのではなく、あなたが Premiere で組み立てた構成そのものを読み取ります。</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <h3>いつも通りに、一本つくる</h3>
+        <p>Premiere Pro で普段どおり編集します。Motif AI はそのプロジェクトから、テロップの書式と配置、カットの間、SE と静止画の使い方、カラーグレードを読み取ります。</p>
+        <div class="mock" aria-hidden="true">
+          <div class="mock-tracks">
+            <div class="track"><span class="name">V3 テロップ</span><div class="lane"><span class="clip t"></span><span class="clip gap"></span><span class="clip t"></span><span class="clip t"></span><span class="clip gap"></span><span class="clip t"></span></div></div>
+            <div class="track"><span class="name">V2 静止画</span><div class="lane"><span class="clip gap"></span><span class="clip g"></span><span class="clip gap"></span><span class="clip gap"></span><span class="clip g"></span></div></div>
+            <div class="track"><span class="name">V1 本編</span><div class="lane"><span class="clip v"></span><span class="clip v"></span><span class="clip v"></span></div></div>
+            <div class="track"><span class="name">A2 SE</span><div class="lane"><span class="clip a" style="flex:0 0 12%"></span><span class="clip gap"></span><span class="clip a" style="flex:0 0 10%"></span><span class="clip gap"></span></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <h3>ルールを提案。承認は、あなた</h3>
+        <p>読み取った構成は「ルール」として提案されます。承認したものだけが記憶に残り、却下したものは二度と提案されません。ルールはいつでも読めて、直せます。</p>
+        <div class="mock" aria-hidden="true">
+          <div class="mock-rules">
+            <div class="rule"><span class="tick">✓</span><span class="txt">テロップは 1 文 1 枚、14 文字で改行<small>承認済み · 8 / 8 の分割を再現</small></span></div>
+            <div class="rule"><span class="tick">✓</span><span class="txt">強調語は黄緑、書体は W7<small>承認済み</small></span></div>
+            <div class="rule"><span class="tick pending"></span><span class="txt">カット後の間は 6 フレーム<small>提案中 · 承認 / 却下</small></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <h3>次の素材に、同じ手つきで</h3>
+        <p>Claude Desktop で素材のフォルダを指すだけ。Motif AI が承認済みのルールで編集し、判断が分かれる箇所だけ質問します。仕上げは、いつものタイムラインで。</p>
+        <div class="mock" aria-hidden="true">
+          <div class="mock-chat">
+            <div class="bubble me">この素材を、リール用テンプレートで。</div>
+            <div class="bubble">1 か所だけ確認です。冒頭の静止画は「商品カット」と「ロゴ」のどちらにしますか？（おすすめ：商品カット）</div>
+            <div class="bubble me">商品カットで。</div>
+            <div class="bubble">適用しました。テロップ 24、カット 9、SE 3。すべて Undo できます。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark" id="reuse" aria-labelledby="reuse-heading">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">再利用</span>
+      <h2 id="reuse-heading">素材が変わっても、<br>テロップは“いつもの”まま。</h2>
+      <p>書体・サイズ・位置・強調色・行の分け方は、あなたが最初につくった一本から。話し手も、場所も、内容も違う三本に、同じ手つきが乗ります。</p>
+    </div>
+    <div class="showcase">
+      <figure class="frame"><img src="assets/th-gym.jpg" width="900" height="1591" loading="lazy" alt="ジムのトレーナーが縦動画でカメラに向かって話している"><span class="tag">素材 A</span><div class="telop"><em>週 2 回</em>で、<br>体は変わる。</div></figure>
+      <figure class="frame"><img src="assets/th-cafe.jpg" width="900" height="1591" loading="lazy" alt="コーヒーショップの店主がカウンターでカメラに向かって話している"><span class="tag">素材 B</span><div class="telop">浅煎りは、<br><em>92℃</em>がいちばん。</div></figure>
+      <figure class="frame"><img src="assets/th-office.jpg" width="900" height="1591" loading="lazy" alt="コンサルタントがオフィスでカメラに向かって話している"><span class="tag">素材 C</span><div class="telop">値決めの<em>正解</em>は、<br>ひとつだけ。</div></figure>
+    </div>
+    <p class="showcase-note">テロップはページ上の実際のテキストです。同じスタイル定義を三つの素材に当てています。</p>
+  </div>
+</section>
+
+<section class="section" id="features" aria-labelledby="features-heading">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">できること</span>
+      <h2 id="features-heading">一本のリールを構成する、六つの工程。</h2>
+      <p>現在のベータ版は、話者一人の縦型ショート（リール・Shorts・TikTok）に最適化しています。</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card"><div class="icon">1</div><h3>テロップ</h3><p>文字起こしをもとに、あなたの書式・位置・行分割・強調で配置します。Essential Graphics として置かれるので、文言もタイミングも手で直せます。</p></div>
+      <div class="card"><div class="icon">2</div><h3>カット提案</h3><p>文字起こしと間から、切る候補を提案します。採用する境界は、話者が画面に収まり、目線がカメラにあるかまで確認してから決めます。</p></div>
+      <div class="card"><div class="icon">3</div><h3>静止画・SE・音楽</h3><p>ライブラリに登録した素材を、いつもの位置とタイミングで配置。音量は前回の値に合わせ、話し声と重なる SE は避けます。</p></div>
+      <div class="card"><div class="icon">4</div><h3>カラーグレード</h3><p>一度つくった LUT と Lumetri の設定をテンプレートとして持ち運び、新しいシーケンスにそのまま適用します。</p></div>
+      <div class="card"><div class="icon">5</div><h3>修正から学ぶ</h3><p>あなたが手で直した箇所を検出し、次回のルールとして提案します。承認するまで、何も変わりません。</p></div>
+      <div class="card"><div class="icon">6</div><h3>クライアント別メモリー</h3><p>アカウントやクライアントごとに独立したスタイルプロファイル。A の手つきが B に混ざることはありません。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark" id="inside" aria-labelledby="inside-heading">
+  <div class="container">
+    <div class="split">
+      <div>
+        <span class="eyebrow">Premiere Pro の中で</span>
+        <h2 id="inside-heading">書き出しは、しません。<br>編集できる状態で、返します。</h2>
+        <p>Motif AI は Premiere Pro のパネルと、Claude Desktop のコネクタとして動きます。生成されるのはすべて Premiere のネイティブなクリップ・グラフィック・エフェクト。手で直せて、Undo できて、いつもの書き出しへ。</p>
+        <ul class="checks">
+          <li>専用トラック「AI ·」に配置。既存のトラックには触りません</li>
+          <li>実行前に検証、実行後に確認フレーム。一手ごとに Undo</li>
+          <li>指示は Claude Desktop から、ご自身の Claude プランで</li>
+          <li>文字起こしは Mac 内で完結（whisper.cpp）</li>
+        </ul>
+      </div>
+      <div>
+        <div class="photo" style="aspect-ratio:16/9">
+          <video autoplay muted loop playsinline preload="metadata" poster="assets/editor-poster.jpg" aria-label="デスクで縦動画を編集している人物のイメージ映像"><source src="assets/editor.mp4" type="video/mp4"></video>
+        </div>
+        <p class="photo-caption">イメージ映像。実際の画面は Premiere Pro と Claude Desktop です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="who" aria-labelledby="who-heading">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">こんな方に</span>
+      <h2 id="who-heading">自分の商品を、自分の動画で売る人へ。</h2>
+      <p>動画は目的ではなく手段。一定の品質で、数を出し続けたい。そういう使い方のためにつくっています。</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card" style="padding:0;overflow:hidden">
+        <div class="photo" style="border:0;border-radius:0"><img src="assets/seg-owner.jpg" width="1600" height="1063" loading="lazy" alt="花屋の店主が店内でスマートフォンを使って自分の縦動画を撮影している"></div>
+        <div style="padding:26px 28px 28px"><h3>オーナー・事業主</h3><p>週に数本の縦動画で、自分のサービスを届けている。編集は必要だけれど、編集が仕事ではない。一度決めた“うちの動画の型”を、毎回同じ手つきで。</p></div>
+      </div>
+      <div class="card" style="padding:0;overflow:hidden">
+        <div class="photo" style="border:0;border-radius:0"><img src="assets/seg-team.jpg" width="1600" height="1063" loading="lazy" alt="オフィスで三人のチームがスマートフォンとノートパソコンで縦動画を確認している"></div>
+        <div style="padding:26px 28px 28px"><h3>SNS 運用会社・チーム</h3><p>複数のアカウントを、一定の品質で量産する。一つのアカウントで固めた編集を、別のアカウントの素材にも。クライアントごとにメモリーは分かれます。</p></div>
+      </div>
+    </div>
+    <p class="fine" style="margin-top:18px">作品としての唯一無二の編集を追求する方や、参考動画から“それっぽさ”を再現したい方には向いていません。Motif AI が覚えるのは、あなた自身が組み立てた編集だけです。</p>
+  </div>
+</section>
+
+<section class="section" id="privacy" aria-labelledby="privacy-heading">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">データの扱い</span>
+      <h2 id="privacy-heading">素材は、あなたの Mac に残ります。</h2>
+      <p>クライアントの映像を預かる仕事だからこそ、何がどこへ行くかを先に書いておきます。</p>
+    </div>
+    <div class="privacy-grid">
       <div class="card">
-        <h3>できること</h3>
+        <h3><span class="pill no">送信なし</span>Mac の外に出ないもの</h3>
         <ul>
-          <li>テロップ・字幕のスタイル、レイアウト、色などの「作り方」を記憶する</li>
-          <li>記憶した作り方を新しい素材に再適用する</li>
-          <li>結果をすべて Premiere のネイティブオブジェクトとしてタイムラインに置く（手で編集・取り消し可能）</li>
+          <li>映像・音声ファイルそのもの</li>
+          <li>Premiere のプロジェクトファイル</li>
+          <li>文字起こし（Mac 内で処理）</li>
+          <li>確認用フレーム、編集プラン、編集履歴</li>
         </ul>
       </div>
       <div class="card">
-        <h3>できないこと</h3>
+        <h3><span class="pill">送られるもの</span>あなたが選んだ範囲だけ</h3>
         <ul>
-          <li>映像のレンダリングや書き出しは行いません</li>
-          <li>編集者の判断を置き換えるものではありません。最終確認は編集者が行います</li>
-          <li>映像ファイルそのものはアップロードされません。結果確認のため、静止画フレーム 1 枚が Claude に送られることがあります（詳細は<a href="privacy.html">プライバシーポリシー</a>）</li>
+          <li>Claude への指示文と、その応答（Anthropic のサーバー）</li>
+          <li>確認を求めたときの、縮小した静止画フレーム 1 枚（Claude へ）</li>
+          <li>クラウド同期を有効にした場合のみ：スタイル・承認ルール・ライブラリの静止画や効果音（1 件 25 MB まで、ご自身のアカウント内）</li>
         </ul>
       </div>
     </div>
-  </section>
+    <p style="margin-top:18px"><a class="text-link" href="privacy.html">プライバシーポリシーの全文を読む</a></p>
+  </div>
+</section>
 
-  <section id="pricing">
-    <h2>料金</h2>
+<section class="section" id="pricing" aria-labelledby="pricing-heading">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">料金</span>
+      <h2 id="pricing-heading">プランは、ひとつ。</h2>
+    </div>
     <div class="price-card">
-      <p class="muted" style="margin:0">早期アクセス（ベータ）</p>
-      <p class="price">月額 2,980 円<span class="unit">（税込）</span></p>
-      <ul>
-        <li>サブスクリプション。いつでも解約できます</li>
-        <li>解約後は支払い済み期間の終了までご利用いただけます</li>
-        <li>初回ご契約の方は 7 日以内なら全額返金</li>
-        <li>お支払いはクレジットカード（Stripe）。決済完了後すぐにライセンスが有効化されます</li>
-      </ul>
-      <a class="btn" href="mailto:yoshil061111@gmail.com?subject=Motif%20AI%20%E6%97%A9%E6%9C%9F%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9">早期アクセスに申し込む</a>
-      <a class="btn secondary" href="pricing.html">料金の詳細</a>
+      <div>
+        <div class="plan">早期アクセス（ベータ）</div>
+        <div class="amount">¥2,980<small>/ 月（税込）</small></div>
+        <ul class="checks">
+          <li>Premiere Pro パネルと Claude Desktop コネクタ（Mac 1 台・1 名）</li>
+          <li>ベータ期間中に追加される機能の更新</li>
+          <li>メールでのサポート</li>
+          <li>いつでも解約。初回契約は 7 日以内なら全額返金</li>
+        </ul>
+        <a class="btn btn-primary btn-lg" href="access.html">早期アクセスに申し込む</a>
+        <p class="fine">お支払いはクレジットカード（Stripe）。<a class="text-link" href="pricing.html">料金の詳細</a></p>
+      </div>
+      <div>
+        <table class="compare">
+          <tr><th>別途必要</th><td>Adobe Premiere Pro（現在は 26.3.2 のみ対応）／ Claude のプラン（Anthropic・Max 推奨）／ macOS</td></tr>
+          <tr><th>含まれないもの</th><td>Adobe と Anthropic の利用料。Motif AI は生成 AI の利用枠を販売しません</td></tr>
+          <tr><th>請求</th><td>ご契約日に初回分、以後は毎月同日に自動で</td></tr>
+          <tr><th>解約</th><td>メールでご連絡ください。次回以降の請求は止まり、支払い済みの期間はご利用いただけます</td></tr>
+        </table>
+      </div>
     </div>
-    <p><small>返金・解約の条件は<a href="terms.html#refund">利用規約</a>をご覧ください。</small></p>
-  </section>
+  </div>
+</section>
 
-  <section class="en" lang="en">
-    <h2>In English</h2>
-    <p><strong>Motif AI</strong> is an AI editing assistant for Adobe Premiere Pro. It remembers how you built a treatment — subtitle style, layout, colour — and reapplies it to new footage. Everything it creates is a native Premiere object on your timeline: hand-editable and undoable. It does not render or export video, and it does not replace your judgement.</p>
-    <p>It runs as a connector inside Claude Desktop (Anthropic's app); you need your own Claude subscription and Premiere Pro (macOS, current version). Your video files are never uploaded; a single still frame may be sent to Claude when you ask it to check a result. Currently in <strong>early access (beta)</strong>. Price: ¥2,980 per month (tax included), cancel any time, 7-day money-back for first-time subscribers.</p>
-    <p><a href="mailto:yoshil061111@gmail.com?subject=Motif%20AI%20early%20access">Request early access by email</a>.</p>
-  </section>
+<section class="section" id="faq" aria-labelledby="faq-heading">
+  <div class="narrow">
+    <div class="section-head center">
+      <span class="eyebrow">FAQ</span>
+      <h2 id="faq-heading">よくある質問</h2>
+    </div>
+    <div class="faq">
+      <details><summary>どんな動画に向いていますか？</summary><div class="answer"><p>話者一人の縦型ショート（Instagram リール、YouTube Shorts、TikTok）で、テロップが主役の編集に最適化しています。横型や多人数の対談、ドキュメンタリー的な編集は、現時点では想定していません。</p></div></details>
+      <details><summary>自分の編集スタイルは、どうやって覚えるのですか？</summary><div class="answer"><p>完成した Premiere プロジェクトから、テロップの書式・配置・行分割、カットの間、SE と静止画の使い方、カラーグレードを読み取り、「ルール」として提案します。あなたが承認したルールだけが記憶に残ります。</p><p>他人の動画（MP4）を眺めて“それっぽく”学習する機能はありません。覚えるのは、あなた自身が組み立てた編集だけです。</p></div></details>
+      <details><summary>生成された結果は、自分で編集できますか？</summary><div class="answer"><p>はい。テロップは Essential Graphics、カットはクリップの分割と削除、SE はオーディオクリップ、色は Lumetri として、Premiere のネイティブなオブジェクトで配置されます。文言もタイミングも位置も手で直せて、一手ごとに Undo できます。</p></div></details>
+      <details><summary>対応環境を教えてください</summary><div class="answer"><p>macOS、Adobe Premiere Pro 26.3.2（他のバージョンではパネルが起動しません）、Claude Desktop とご自身の Claude プランが必要です。文字起こしとカット提案には ffmpeg と whisper.cpp を使うため、付属のスクリプトでインストールしていただきます（1.6 GB のモデルを含みます）。</p></div></details>
+      <details><summary>Claude のプランは、どれが必要ですか？</summary><div class="answer"><p>Pro でも動作しますが、テロップの処理は多数のツール呼び出しが続く長い実行になるため、途中で制限にかかることがあります。Max をおすすめしています。Claude の利用料は Motif AI の料金に含まれません。</p></div></details>
+      <details><summary>動画がアップロードされることはありますか？</summary><div class="answer"><p>ありません。映像・音声ファイル、プロジェクトファイル、文字起こしは Mac の中で処理されます。Claude に送られるのは指示文と応答、それから確認を求めたときの縮小した静止画 1 枚だけです。詳しくは<a href="privacy.html">プライバシーポリシー</a>をご覧ください。</p></div></details>
+      <details><summary>複数のクライアントを担当しています。編集が混ざりませんか？</summary><div class="answer"><p>混ざりません。スタイルプロファイルはクライアント・アカウントごとに独立していて、それぞれ別のルールを持ちます。適用するときにプロファイルを指定します。</p></div></details>
+      <details><summary>解約と返金について</summary><div class="answer"><p>いつでも解約できます。ご登録のメールアドレスからご連絡いただければ、次回以降の請求を止め、支払い済みの期間が終わるまでご利用いただけます。初めてご契約の方は、初回決済から 7 日以内なら理由を問わず全額返金します。詳しくは<a href="terms.html#refund">利用規約</a>をご覧ください。</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark closing" aria-labelledby="closing-heading">
+  <div class="narrow">
+    <span class="eyebrow">早期アクセス</span>
+    <h2 id="closing-heading">次の一本から、<br>組み直さない。</h2>
+    <p>早期アクセスは順次ご案内しています。まずは、普段つくっている動画のことを聞かせてください。合わないと思えば、そうお伝えします。</p>
+    <div class="actions">
+      <a class="btn btn-lime btn-lg" href="access.html">早期アクセスに申し込む</a>
+      <a class="btn btn-secondary btn-lg" href="access.html#form">まず相談する</a>
+    </div>
+  </div>
+</section>
 </main>
-
 <footer class="site-footer">
-  <div class="wrap">
-    <nav>
-      <a href="pricing.html">料金</a>
-      <a href="terms.html">利用規約</a>
-      <a href="privacy.html">プライバシーポリシー</a>
-      <a href="tokushoho.html">特定商取引法に基づく表記</a>
-      <a href="mailto:yoshil061111@gmail.com">お問い合わせ</a>
-    </nav>
-    <p>Adobe、Premiere Pro は Adobe Inc. の商標です。Claude は Anthropic PBC の商標です。Motif AI はいずれとも提携関係にありません。</p>
-    <p>&copy; 2026 Motif AI</p>
+  <div class="container">
+    <div class="top">
+      <a class="wordmark" href="./"><span class="dot" aria-hidden="true"></span>Motif AI<span class="ja">モティフAI</span></a>
+      <nav aria-label="フッターナビゲーション">
+        <a href="pricing.html">料金</a>
+        <a href="access.html">はじめ方</a>
+        <a href="privacy.html">プライバシーポリシー</a>
+        <a href="terms.html">利用規約</a>
+        <a href="tokushoho.html">特定商取引法に基づく表記</a>
+        <a href="mailto:yoshil061111@gmail.com">お問い合わせ</a>
+      </nav>
+    </div>
+    <p class="legal">Motif AI は Adobe Premiere Pro のパネルと Anthropic Claude Desktop のコネクタとして動作する、独立した製品です。Adobe、Premiere Pro は Adobe Inc. の商標です。Claude は Anthropic PBC の商標です。Motif AI はいずれとも提携関係にありません。ページ内の人物写真・映像は、機能を説明するための生成イメージです。</p>
+    <p class="copy">© 2026 Motif AI</p>
   </div>
 </footer>
 </body>
