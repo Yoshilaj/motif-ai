@@ -376,6 +376,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .legal-table td { border-top: 0; padding-top: 4px; }
   .btn-lg { width: 100%; }
   .page-hero { padding-top: 110px; }
+  .hide-sm { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
