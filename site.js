@@ -60,15 +60,14 @@
   const video = wrap && wrap.querySelector('video');
   const phone = window.matchMedia('(max-width: 760px)').matches;
   if (wrap && video) {
-    if (phone || reduce) {
-      video.loop = true; video.muted = true;
-      if (!reduce) video.play().catch(() => {});
-    } else {
-      video.pause();
+    if (reduce) { video.removeAttribute('autoplay'); video.loop = false; video.pause(); }
+    else if (phone) { video.loop = true; video.play().catch(() => {}); }
+    else {
+      // Scroll-scrubbed on desktop. The markup autoplays the clip, which both keeps the
+      // animation running if this never takes over and primes the decoder — browsers will
+      // not paint a seek on a video that has never played.
       let duration = 0;
-      const ready = () => { duration = video.duration || 0; update(); };
-      video.addEventListener('loadedmetadata', ready);
-      if (video.readyState >= 1) ready();
+      let scrubbing = false;
       let ticking = false;
       const update = () => {
         ticking = false;
@@ -76,11 +75,25 @@
         const total = rect.height - window.innerHeight;
         const p = total > 0 ? Math.min(1, Math.max(0, -rect.top / total)) : 1;
         wrap.style.setProperty('--p', p.toFixed(3));
-        if (duration) {
+        if (scrubbing && duration) {
           const t = p * (duration - 0.05);
           if (Math.abs(video.currentTime - t) > 0.02) video.currentTime = t;
         }
       };
+      const takeOver = () => {
+        if (scrubbing) return;
+        duration = video.duration || 0;
+        if (!duration) return;
+        scrubbing = true;
+        video.loop = false;
+        video.pause();
+        update();
+      };
+      if (video.readyState >= 2) takeOver();
+      else {
+        video.addEventListener('loadeddata', takeOver, { once: true });
+        video.addEventListener('playing', takeOver, { once: true });
+      }
       window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
       window.addEventListener('resize', update);
       update();

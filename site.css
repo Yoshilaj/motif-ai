@@ -312,7 +312,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .legal-table th { width: 12em; font-weight: 500; color: var(--muted); background: var(--card); white-space: nowrap; }
 .legal-table a { color: var(--lime); text-decoration: underline; text-underline-offset: 3px; }
 .table-wrap { overflow-x: auto; }
-.req { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.req { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
 .req .card { padding: 18px 20px; border-radius: var(--r); border: 1px solid var(--line); background: var(--card); }
 .req .card b { display: block; font-weight: 500; color: var(--ink); font-size: 15px; margin-bottom: 3px; }
 .req .card span { color: var(--muted); font-size: 13.5px; line-height: 1.7; }
