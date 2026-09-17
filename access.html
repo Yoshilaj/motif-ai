@@ -18,32 +18,32 @@
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@1&family=Noto+Serif+JP:wght@600&family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
 <link rel="stylesheet" href="site.css">
 <script src="site.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">本文へ進む</a>
 <header class="site-header">
-  <div class="container">
+  <div class="nav">
     <a class="wordmark" href="./" aria-label="Motif AI ホーム"><span class="dot" aria-hidden="true"></span>Motif AI<span class="ja">モティフAI</span></a>
     <nav class="site-nav" aria-label="メインナビゲーション"><a href="./#how">仕組み</a><a href="./#features">できること</a><a href="pricing.html">料金</a><a href="access.html" aria-current="page">はじめ方</a><a href="./#faq">FAQ</a></nav>
     <div class="header-cta"><a class="btn btn-primary btn-sm" href="access.html">早期アクセスに申し込む</a></div>
     <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav">メニュー</button>
-    <nav id="mobile-nav" class="mobile-nav" aria-label="モバイルナビゲーション" hidden><a href="./#how">仕組み</a><a href="./#features">できること</a><a href="pricing.html">料金</a><a href="access.html" aria-current="page">はじめ方</a><a href="./#faq">FAQ</a><a class="btn btn-primary" href="access.html">早期アクセスに申し込む</a></nav>
   </div>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="モバイルナビゲーション" hidden><a href="./#how">仕組み</a><a href="./#features">できること</a><a href="pricing.html">料金</a><a href="access.html" aria-current="page">はじめ方</a><a href="./#faq">FAQ</a><a class="btn btn-primary" href="access.html">早期アクセスに申し込む</a></nav>
 </header>
 <main id="main">
 <section class="page-hero">
   <div class="container">
-    <span class="eyebrow">はじめ方</span>
+    <span class="mono">はじめ方</span>
     <h1>早期アクセスの、はじめ方。</h1>
     <p>申し込みから最初の編集まで、ふつうは 30 分ほどです。まず環境をご確認ください。</p>
   </div>
 </section>
 <section class="section" style="padding-top:8px" aria-labelledby="req-heading">
   <div class="container">
-    <h2 id="req-heading" style="font-size:22px;margin-bottom:18px">必要なもの</h2>
+    <h2 id="req-heading" class="h2-sm">必要なもの</h2>
     <div class="req">
       <div class="card"><b>macOS の Mac</b><span>Apple シリコン推奨。文字起こし用に約 2 GB の空き</span></div>
       <div class="card"><b>Premiere Pro 26.3.2</b><span>現在はこのバージョンのみ。他ではパネルが起動しません</span></div>
@@ -54,14 +54,14 @@
 </section>
 <section class="section" aria-labelledby="paths-heading">
   <div class="container">
-    <h2 id="paths-heading" style="font-size:22px;margin-bottom:18px">申し込み方法</h2>
+    <h2 id="paths-heading" class="h2-sm">申し込み方法</h2>
     <div class="paths">
       <div class="path primary">
         <div class="kicker">A · 今すぐはじめる</div>
         <h3>月額 2,980 円で申し込む</h3>
         <p>Stripe の決済ページでカードを登録すると、そのメールアドレスでライセンスが有効になります。初回契約は 7 日以内なら理由を問わず全額返金。</p>
         <a class="btn btn-primary btn-lg btn-block" href="https://buy.stripe.com/28E00l5KM37Q29H1Jn2kw00" rel="noopener">Stripe で申し込む</a>
-        <p class="fine">決済後、この画面に戻ってきます。ご案内メールは決済に使ったアドレスへ届きます。<a class="text-link" href="terms.html">利用規約</a>・<a class="text-link" href="pricing.html">料金</a></p>
+        <p class="fine">決済後、この画面に戻ってきます。ご案内メールは決済に使ったアドレスへ届きます。<a class="text-link plain" href="terms.html">利用規約</a>・<a class="text-link plain" href="pricing.html">料金</a></p>
       </div>
       <div class="path" id="form">
         <div class="kicker">B · まず相談する</div>
@@ -76,7 +76,7 @@
           <div class="hp" aria-hidden="true"><label>Website<input name="website" type="text" tabindex="-1" autocomplete="off"></label></div>
           <button class="btn btn-secondary btn-lg btn-block" type="submit">送信する</button>
           <p class="status" role="status" aria-live="polite"></p>
-          <p class="fine">送信内容はライセンスのご案内とサポートにのみ使い、第三者に提供しません。<a class="text-link" href="privacy.html">プライバシーポリシー</a></p>
+          <p class="fine">送信内容はライセンスのご案内とサポートにのみ使い、第三者に提供しません。<a class="text-link plain" href="privacy.html">プライバシーポリシー</a></p>
         </form>
       </div>
     </div>

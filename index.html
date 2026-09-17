@@ -18,187 +18,152 @@
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@1&family=Noto+Serif+JP:wght@600&family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
 <link rel="stylesheet" href="site.css">
-<link rel="preload" href="assets/hero-poster.jpg" as="image">
+<link rel="preload" href="assets/ui-hero.jpg" as="image">
 <script src="site.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">本文へ進む</a>
 <header class="site-header">
-  <div class="container">
+  <div class="nav">
     <a class="wordmark" href="./" aria-label="Motif AI ホーム"><span class="dot" aria-hidden="true"></span>Motif AI<span class="ja">モティフAI</span></a>
     <nav class="site-nav" aria-label="メインナビゲーション"><a href="#how">仕組み</a><a href="#features">できること</a><a href="pricing.html">料金</a><a href="access.html">はじめ方</a><a href="#faq">FAQ</a></nav>
     <div class="header-cta"><a class="btn btn-primary btn-sm" href="access.html">早期アクセスに申し込む</a></div>
     <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav">メニュー</button>
-    <nav id="mobile-nav" class="mobile-nav" aria-label="モバイルナビゲーション" hidden><a href="#how">仕組み</a><a href="#features">できること</a><a href="pricing.html">料金</a><a href="access.html">はじめ方</a><a href="#faq">FAQ</a><a class="btn btn-primary" href="access.html">早期アクセスに申し込む</a></nav>
   </div>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="モバイルナビゲーション" hidden><a href="#how">仕組み</a><a href="#features">できること</a><a href="pricing.html">料金</a><a href="access.html">はじめ方</a><a href="#faq">FAQ</a><a class="btn btn-primary" href="access.html">早期アクセスに申し込む</a></nav>
 </header>
 <main id="main">
 <section class="hero" aria-labelledby="hero-heading">
   <div class="container">
-    <div class="hero-copy">
-      <div class="badge-row">
-        <span class="badge"><span class="dot" aria-hidden="true"></span><b>Premiere Pro</b> パネル</span>
-        <span class="badge"><b>Claude Desktop</b> 連携</span>
-        <span class="badge">macOS</span>
-        <span class="badge">早期アクセス受付中</span>
-      </div>
-      <h1 id="hero-heading">いつもの編集を、<br>Premiere Pro が覚えている。</h1>
-      <p class="lead">テロップの書式、カットの間、SE の置き方、色。あなたが一度組み立てた編集を Motif AI が記憶し、次の素材に同じ手つきで再現します。結果はすべて、いつものタイムライン上の編集できるオブジェクトです。</p>
-      <div class="actions">
-        <a class="btn btn-lime btn-lg" href="access.html">早期アクセスに申し込む</a>
-        <a class="btn btn-secondary btn-lg" href="#how">仕組みを見る</a>
-      </div>
-      <p class="fine">月額 2,980 円（税込）・いつでも解約・初回 7 日間は全額返金</p>
+    <span class="mono"><span class="pulse-dot" aria-hidden="true"></span>Premiere Pro × Claude Desktop · 早期アクセス</span>
+    <h1 id="hero-heading">いつもの編集を、<br>Premiere Pro が覚えている。</h1>
+    <p class="lead">一度組み立てた編集を、次の素材に同じ手つきで。仕上げは、いつものタイムラインで。</p>
+    <div class="actions">
+      <a class="btn btn-primary btn-lg" href="access.html">早期アクセスに申し込む</a>
+      <a class="btn btn-secondary btn-lg" href="#how">仕組みを見る</a>
     </div>
-    <div class="hero-media">
-      <div class="video-wrap">
-        <video autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg" aria-label="スマートフォンを三脚に立て、オフィスで自分の縦動画を撮影している事業主のイメージ映像">
-          <source src="assets/hero.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="hero-overlay" aria-label="Claude Desktop での指示と、Motif AI の適用結果の例">
-        <div class="chat-card user"><div class="who">あなた · Claude Desktop</div>このフォルダの素材を、いつものリール用に編集して。</div>
-        <div class="chat-card"><div class="who"><span class="dot" aria-hidden="true"></span>Motif AI · 適用結果（例）</div>
-          <ul>
-            <li><span>テロップ</span><span>36</span></li>
-            <li><span>カット</span><span>12</span></li>
-            <li><span>静止画・SE</span><span>5</span></li>
-            <li><span>カラーグレード</span><span>適用</span></li>
-            <li><span>すべて</span><span>取り消し可</span></li>
-          </ul>
+    <p class="fine">macOS · Premiere Pro 26.3 · 月額 2,980 円（税込）· 初回 7 日間は全額返金</p>
+  </div>
+</section>
+
+<div class="stage-wrap" aria-label="Premiere Pro の中で Motif AI がタイムラインを編集しているイメージ">
+  <div class="stage">
+    <div class="product">
+      <div class="glow-card">
+        <div class="media">
+          <video muted playsinline preload="auto" poster="assets/ui-hero.jpg">
+            <source src="assets/ui-scrub.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
+      <div class="hint" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 1v10M2 7l4 4 4-4"/></svg>スクロールで再生</div>
+      <div class="stats" aria-label="実際のリール 1 本を再現した際の一例">
+        <div class="stat"><b><span data-count="36">0</span></b><span>テロップ</span></div>
+        <div class="stat"><b><span data-count="12">0</span></b><span>カット</span></div>
+        <div class="stat"><b><span data-count="5">0</span></b><span>静止画・SE</span></div>
+        <div class="stat"><b><span data-count="1">0</span></b><span>グレード</span></div>
+        <div class="stat"><b>∞</b><span>取り消し可</span></div>
+      </div>
     </div>
   </div>
-  <p class="hero-note">映像はイメージです。数値は実際のリール（33 秒）を再現した際の一例です。</p>
-</section>
+</div>
+<p class="stage-note">画面はイメージです。数値は実際のリール（33 秒）を再現した際の一例。</p>
 
-<section class="trust" aria-label="Motif AI の前提">
-  <div class="container">
-    <div class="item"><b>映像ファイルは Mac の外に出ません</b><span>処理はローカル。動画のアップロードはありません。</span></div>
-    <div class="item"><b>Premiere のネイティブオブジェクト</b><span>書き出しではなく、編集できるタイムラインが残ります。</span></div>
-    <div class="item"><b>すべて取り消し可能</b><span>実行前に検証し、一手ごとに Undo できます。</span></div>
-    <div class="item"><b>覚えるのは、承認したルールだけ</b><span>提案 → あなたが承認 → 次の動画から適用。</span></div>
+<div class="marquee" aria-label="Motif AI が覚えるもの">
+  <div class="marquee-track">
+    <span class="chip"><i></i>書体</span><span class="chip"><i></i>文字サイズ</span><span class="chip"><i></i>テロップの位置</span><span class="chip"><i></i>行の分け方</span><span class="chip"><i></i>強調色</span><span class="chip"><i></i>カットの間</span><span class="chip"><i></i>SE のタイミング</span><span class="chip"><i></i>音量</span><span class="chip"><i></i>静止画の置き方</span><span class="chip"><i></i>LUT と Lumetri</span><span class="chip"><i></i>クリップの尻尾</span><span class="chip"><i></i>クライアントごとの違い</span>
+    <span class="chip"><i></i>書体</span><span class="chip"><i></i>文字サイズ</span><span class="chip"><i></i>テロップの位置</span><span class="chip"><i></i>行の分け方</span><span class="chip"><i></i>強調色</span><span class="chip"><i></i>カットの間</span><span class="chip"><i></i>SE のタイミング</span><span class="chip"><i></i>音量</span><span class="chip"><i></i>静止画の置き方</span><span class="chip"><i></i>LUT と Lumetri</span><span class="chip"><i></i>クリップの尻尾</span><span class="chip"><i></i>クライアントごとの違い</span>
   </div>
-</section>
+</div>
 
-<section class="section" id="why" aria-labelledby="why-heading">
+<section class="section tight" aria-label="Motif AI の前提">
   <div class="container">
-    <div class="section-head center">
-      <span class="eyebrow">同じ編集を、毎回ゼロから</span>
-      <h2 id="why-heading">テンプレートは部品を覚える。<br>意図までは、覚えない。</h2>
-      <p>書体、色、位置、行の分け方、SE のタイミング。“いつもの編集”は、数十の小さな判断の積み重ねです。テンプレートに入らないその判断を、動画ごとに手で組み直していませんか。</p>
-    </div>
-    <div class="grid grid-3">
-      <div class="card"><div class="icon">T</div><h3>テロップが、編集時間の大半</h3><p>33 秒のリールにテロップが 36 枚。書式と分割の癖を毎回再現する作業が、動画尺の何倍もの時間を食います。</p></div>
-      <div class="card"><div class="icon">A→B</div><h3>「A の編集を、B にも」</h3><p>複数のアカウントを運用していると、一つのアカウントで固めた手つきを、別の素材に載せ替える作業が繰り返し発生します。人に伝えるのも難しい。</p></div>
-      <div class="card"><div class="icon">↺</div><h3>直したことが、次に残らない</h3><p>今日の動画で直した位置やタイミングは、明日の動画には引き継がれません。同じ修正を、同じ場所で、毎回。</p></div>
+    <div class="trust stagger">
+      <div class="item"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div><b>映像は Mac の外に出ません</b><span>処理はローカル。動画のアップロードはありません。</span></div>
+      <div class="item"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg></div><b>Premiere のネイティブオブジェクト</b><span>書き出しではなく、編集できるタイムラインが残ります。</span></div>
+      <div class="item"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14L4 9l5-5"/><path d="M4 9h11a5 5 0 0 1 0 10h-3"/></svg></div><b>すべて取り消し可能</b><span>実行前に検証し、一手ごとに Undo できます。</span></div>
+      <div class="item"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div><b>覚えるのは、承認したルールだけ</b><span>提案 → あなたが承認 → 次の動画から適用。</span></div>
     </div>
   </div>
 </section>
 
 <section class="section" id="how" aria-labelledby="how-heading">
   <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">仕組み</span>
-      <h2 id="how-heading">一本つくる。覚える。<br>次の素材に、同じ手つきで。</h2>
-      <p>Motif AI は、完成した動画を眺めて“それっぽく”真似るのではなく、あなたが Premiere で組み立てた構成そのものを読み取ります。</p>
+    <div class="section-head center reveal">
+      <h2 id="how-heading">一本つくる。<em class="serif">いつもの</em>を、覚える。<br>次の素材に、同じ手つきで。</h2>
+      <p>完成した動画を眺めて“それっぽく”真似るのではなく、あなたが Premiere で組み立てた構成そのものを読み取ります。テロップの型、カットの間、SE と静止画の置き方、色まで。</p>
+      <div class="actions" style="justify-content:center;margin-top:26px"><a class="btn btn-primary" href="access.html">早期アクセスに申し込む</a><a class="btn btn-secondary" href="#features">できることを見る</a></div>
     </div>
-    <div class="steps">
+    <div class="steps stagger">
       <div class="step">
-        <h3>いつも通りに、一本つくる</h3>
-        <p>Premiere Pro で普段どおり編集します。Motif AI はそのプロジェクトから、テロップの書式と配置、カットの間、SE と静止画の使い方、カラーグレードを読み取ります。</p>
-        <div class="mock" aria-hidden="true">
-          <div class="mock-tracks">
-            <div class="track"><span class="name">V3 テロップ</span><div class="lane"><span class="clip t"></span><span class="clip gap"></span><span class="clip t"></span><span class="clip t"></span><span class="clip gap"></span><span class="clip t"></span></div></div>
-            <div class="track"><span class="name">V2 静止画</span><div class="lane"><span class="clip gap"></span><span class="clip g"></span><span class="clip gap"></span><span class="clip gap"></span><span class="clip g"></span></div></div>
-            <div class="track"><span class="name">V1 本編</span><div class="lane"><span class="clip v"></span><span class="clip v"></span><span class="clip v"></span></div></div>
-            <div class="track"><span class="name">A2 SE</span><div class="lane"><span class="clip a" style="flex:0 0 12%"></span><span class="clip gap"></span><span class="clip a" style="flex:0 0 10%"></span><span class="clip gap"></span></div></div>
-          </div>
-        </div>
+        <div class="shot"><img src="assets/step-timeline.jpg" width="1400" height="583" loading="lazy" alt="Premiere Pro のタイムライン。AI · Telop トラックに黄緑のテロップクリップが並んでいる"></div>
+        <div class="body"><span class="mono">01 · いつも通りにつくる</span><h3>Premiere で、一本編集する</h3><p>プロジェクトから、テロップの書式と配置、カットの間、SE と静止画の使い方、カラーグレードを読み取ります。</p></div>
       </div>
       <div class="step">
-        <h3>ルールを提案。承認は、あなた</h3>
-        <p>読み取った構成は「ルール」として提案されます。承認したものだけが記憶に残り、却下したものは二度と提案されません。ルールはいつでも読めて、直せます。</p>
-        <div class="mock" aria-hidden="true">
-          <div class="mock-rules">
-            <div class="rule"><span class="tick">✓</span><span class="txt">テロップは 1 文 1 枚、14 文字で改行<small>承認済み · 8 / 8 の分割を再現</small></span></div>
-            <div class="rule"><span class="tick">✓</span><span class="txt">強調語は黄緑、書体は W7<small>承認済み</small></span></div>
-            <div class="rule"><span class="tick pending"></span><span class="txt">カット後の間は 6 フレーム<small>提案中 · 承認 / 却下</small></span></div>
-          </div>
-        </div>
+        <div class="shot"><img src="assets/step-rules.jpg" width="1400" height="933" loading="lazy" alt="Motif AI パネル。編集のルールが並び、承認済みのものにチェックが付いている"></div>
+        <div class="body"><span class="mono">02 · ルールを承認する</span><h3>提案は読める。承認は、あなた</h3><p>読み取った構成は「ルール」として提案されます。承認したものだけが記憶に残り、却下したものは二度と提案されません。</p></div>
       </div>
       <div class="step">
-        <h3>次の素材に、同じ手つきで</h3>
-        <p>Claude Desktop で素材のフォルダを指すだけ。Motif AI が承認済みのルールで編集し、判断が分かれる箇所だけ質問します。仕上げは、いつものタイムラインで。</p>
-        <div class="mock" aria-hidden="true">
-          <div class="mock-chat">
-            <div class="bubble me">この素材を、リール用テンプレートで。</div>
-            <div class="bubble">1 か所だけ確認です。冒頭の静止画は「商品カット」と「ロゴ」のどちらにしますか？（おすすめ：商品カット）</div>
-            <div class="bubble me">商品カットで。</div>
-            <div class="bubble">適用しました。テロップ 24、カット 9、SE 3。すべて Undo できます。</div>
-          </div>
-        </div>
+        <div class="shot"><img src="assets/step-monitor.jpg" width="1400" height="933" loading="lazy" alt="プログラムモニター。新しい素材にいつものテロップスタイルが載っている"></div>
+        <div class="body"><span class="mono">03 · 次の素材に適用する</span><h3>フォルダを指す。あとは質問に答えるだけ</h3><p>Claude Desktop で素材のフォルダを指定。承認済みのルールで編集し、判断が分かれる箇所だけ聞いてきます。</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section-dark" id="reuse" aria-labelledby="reuse-heading">
+<section class="section" id="reuse" aria-labelledby="reuse-heading">
   <div class="container">
-    <div class="section-head center">
-      <span class="eyebrow">再利用</span>
-      <h2 id="reuse-heading">素材が変わっても、<br>テロップは“いつもの”まま。</h2>
-      <p>書体・サイズ・位置・強調色・行の分け方は、あなたが最初につくった一本から。話し手も、場所も、内容も違う三本に、同じ手つきが乗ります。</p>
+    <div class="section-head center reveal">
+      <span class="mono">再利用</span>
+      <h2 id="reuse-heading">素材が変わっても、<em class="serif">いつもの</em>まま。</h2>
+      <p>書体、サイズ、位置、強調色、行の分け方。あなたが最初につくった一本から取り出したスタイルを、話し手も場所も違う三本に、そのまま載せます。</p>
     </div>
-    <div class="showcase">
-      <figure class="frame"><img src="assets/th-gym.jpg" width="900" height="1591" loading="lazy" alt="ジムのトレーナーが縦動画でカメラに向かって話している"><span class="tag">素材 A</span><div class="telop"><em>週 2 回</em>で、<br>体は変わる。</div></figure>
-      <figure class="frame"><img src="assets/th-cafe.jpg" width="900" height="1591" loading="lazy" alt="コーヒーショップの店主がカウンターでカメラに向かって話している"><span class="tag">素材 B</span><div class="telop">浅煎りは、<br><em>92℃</em>がいちばん。</div></figure>
-      <figure class="frame"><img src="assets/th-office.jpg" width="900" height="1591" loading="lazy" alt="コンサルタントがオフィスでカメラに向かって話している"><span class="tag">素材 C</span><div class="telop">値決めの<em>正解</em>は、<br>ひとつだけ。</div></figure>
+    <div class="showcase-wrap reveal">
+      <div class="glow-card"><div class="media"><div class="showcase">
+        <figure class="frame"><img src="assets/th-gym.jpg" width="900" height="1591" loading="lazy" alt="ジムのトレーナーが縦動画でカメラに向かって話している"><span class="tag">A</span><div class="telop"><em>週 2 回</em>で、<br>体は変わる。</div></figure>
+        <figure class="frame"><img src="assets/th-cafe.jpg" width="900" height="1591" loading="lazy" alt="コーヒーショップの店主がカウンターでカメラに向かって話している"><span class="tag">B</span><div class="telop">浅煎りは、<br><em>92℃</em>がいちばん。</div></figure>
+        <figure class="frame"><img src="assets/th-office.jpg" width="900" height="1591" loading="lazy" alt="コンサルタントがオフィスでカメラに向かって話している"><span class="tag">C</span><div class="telop">値決めの<em>正解</em>は、<br>ひとつだけ。</div></figure>
+      </div></div></div>
+      <p class="fine" style="text-align:center;margin-top:16px">テロップは画像ではなく、ページ上の実際のテキストです。同じスタイル定義を三つの素材に当てています。</p>
     </div>
-    <p class="showcase-note">テロップはページ上の実際のテキストです。同じスタイル定義を三つの素材に当てています。</p>
   </div>
 </section>
 
 <section class="section" id="features" aria-labelledby="features-heading">
   <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">できること</span>
+    <div class="section-head reveal">
+      <span class="mono">できること</span>
       <h2 id="features-heading">一本のリールを構成する、<br>六つの工程。</h2>
       <p>現在のベータ版は、話者一人の縦型ショート（リール・Shorts・TikTok）に最適化しています。</p>
     </div>
-    <div class="grid grid-3">
-      <div class="card"><div class="icon">1</div><h3>テロップ</h3><p>文字起こしをもとに、あなたの書式・位置・行分割・強調で配置します。Essential Graphics として置かれるので、文言もタイミングも手で直せます。</p></div>
-      <div class="card"><div class="icon">2</div><h3>カット提案</h3><p>文字起こしと間から、切る候補を提案します。採用する境界は、話者が画面に収まり、目線がカメラにあるかまで確認してから決めます。</p></div>
-      <div class="card"><div class="icon">3</div><h3>静止画・SE・音楽</h3><p>ライブラリに登録した素材を、いつもの位置とタイミングで配置。音量は前回の値に合わせ、話し声と重なる SE は避けます。</p></div>
-      <div class="card"><div class="icon">4</div><h3>カラーグレード</h3><p>一度つくった LUT と Lumetri の設定をテンプレートとして持ち運び、新しいシーケンスにそのまま適用します。</p></div>
-      <div class="card"><div class="icon">5</div><h3>修正から学ぶ</h3><p>あなたが手で直した箇所を検出し、次回のルールとして提案します。承認するまで、何も変わりません。</p></div>
-      <div class="card"><div class="icon">6</div><h3>クライアント別メモリー</h3><p>アカウントやクライアントごとに独立したスタイルプロファイル。A の手つきが B に混ざることはありません。</p></div>
+    <div class="features stagger">
+      <div class="feature"><div class="top"><h3>テロップ</h3><span class="mono">01</span></div><p>文字起こしをもとに、あなたの書式・位置・行分割・強調で配置。Essential Graphics として置かれるので、文言もタイミングも手で直せます。</p></div>
+      <div class="feature"><div class="top"><h3>カット提案</h3><span class="mono">02</span></div><p>文字起こしと間から、切る候補を提案。採用する境界は、話者が画面に収まり、目線がカメラにあるかまで確認してから決めます。</p></div>
+      <div class="feature"><div class="top"><h3>静止画・SE・音楽</h3><span class="eq" aria-hidden="true"><span style="--d:0s"></span><span style="--d:.15s"></span><span style="--d:.3s"></span><span style="--d:.45s"></span><span style="--d:.6s"></span></span></div><p>ライブラリの素材を、いつもの位置とタイミングで配置。音量は前回の値に合わせ、話し声と重なる SE は避けます。</p></div>
+      <div class="feature"><div class="top"><h3>カラーグレード</h3><span class="mono">04</span></div><p>一度つくった LUT と Lumetri の設定をテンプレートとして持ち運び、新しいシーケンスにそのまま適用します。</p></div>
+      <div class="feature"><div class="top"><h3>修正から学ぶ</h3><span class="mono">05</span></div><p>あなたが手で直した箇所を検出し、次回のルールとして提案。承認するまで、何も変わりません。</p></div>
+      <div class="feature"><div class="top"><h3>クライアント別メモリー</h3><span class="mono">06</span></div><p>アカウントやクライアントごとに独立したスタイルプロファイル。A の手つきが B に混ざることはありません。</p></div>
     </div>
   </div>
 </section>
 
-<section class="section section-dark" id="inside" aria-labelledby="inside-heading">
+<section class="section" id="inside" aria-labelledby="inside-heading">
   <div class="container">
-    <div class="split">
-      <div>
-        <span class="eyebrow">Premiere Pro の中で</span>
-        <h2 id="inside-heading">書き出しは、しません。<br>編集できる状態で、返します。</h2>
-        <p>Motif AI は Premiere Pro のパネルと、Claude Desktop のコネクタとして動きます。生成されるのはすべて Premiere のネイティブなクリップ・グラフィック・エフェクト。手で直せて、Undo できて、いつもの書き出しへ。</p>
-        <ul class="checks">
-          <li>専用トラック「AI ·」に配置。既存のトラックには触りません</li>
-          <li>実行前に検証、実行後に確認フレーム。一手ごとに Undo</li>
-          <li>指示は Claude Desktop から、ご自身の Claude プランで</li>
-          <li>文字起こしは Mac 内で完結（whisper.cpp）</li>
-        </ul>
+    <div class="split reverse">
+      <div class="reveal">
+        <div class="glow-card"><div class="media"><video muted loop playsinline preload="metadata" data-loop autoplay poster="assets/editor-poster.jpg" aria-label="デスクで縦動画を編集している人物のイメージ映像"><source src="assets/editor.mp4" type="video/mp4"></video></div></div>
       </div>
-      <div>
-        <div class="photo" style="aspect-ratio:16/9">
-          <video autoplay muted loop playsinline preload="metadata" poster="assets/editor-poster.jpg" aria-label="デスクで縦動画を編集している人物のイメージ映像"><source src="assets/editor.mp4" type="video/mp4"></video>
+      <div class="reveal" style="--i:1">
+        <h2 id="inside-heading">書き出しは、しません。<br>編集できる状態で、<em class="serif">返します</em>。</h2>
+        <p>Motif AI は Premiere Pro のパネルと、Claude Desktop のコネクタとして動きます。生成されるのはすべて Premiere のネイティブなクリップ・グラフィック・エフェクト。手で直せて、Undo できて、いつもの書き出しへ。</p>
+        <div class="mini">
+          <div class="box"><b>専用トラック「AI ·」に配置</b><span>既存のトラックには触りません。</span></div>
+          <div class="box"><b>実行前に検証、一手ごとに Undo</b><span>実行後は確認フレームで結果を見ます。</span></div>
+          <div class="box"><b>指示は Claude Desktop から</b><span>ご自身の Claude プランで動きます。</span></div>
+          <div class="box"><b>文字起こしは Mac 内で完結</b><span>whisper.cpp をローカルで実行します。</span></div>
         </div>
-        <p class="photo-caption">イメージ映像。実際の画面は Premiere Pro と Claude Desktop です。</p>
       </div>
     </div>
   </div>
@@ -206,64 +171,69 @@
 
 <section class="section" id="who" aria-labelledby="who-heading">
   <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">こんな方に</span>
+    <div class="section-head reveal">
+      <span class="mono">こんな方に</span>
       <h2 id="who-heading">自分の商品を、自分の動画で売る人へ。</h2>
       <p>動画は目的ではなく手段。一定の品質で、数を出し続けたい。そういう使い方のためにつくっています。</p>
     </div>
-    <div class="grid grid-2">
-      <div class="card" style="padding:0;overflow:hidden">
-        <div class="photo" style="border:0;border-radius:0"><img src="assets/seg-owner.jpg" width="1600" height="1063" loading="lazy" alt="花屋の店主が店内でスマートフォンを使って自分の縦動画を撮影している"></div>
-        <div style="padding:26px 28px 28px"><h3>オーナー・事業主</h3><p>週に数本の縦動画で、自分のサービスを届けている。編集は必要だけれど、編集が仕事ではない。一度決めた“うちの動画の型”を、毎回同じ手つきで。</p></div>
-      </div>
-      <div class="card" style="padding:0;overflow:hidden">
-        <div class="photo" style="border:0;border-radius:0"><img src="assets/seg-team.jpg" width="1600" height="1063" loading="lazy" alt="オフィスで三人のチームがスマートフォンとノートパソコンで縦動画を確認している"></div>
-        <div style="padding:26px 28px 28px"><h3>SNS 運用会社・チーム</h3><p>複数のアカウントを、一定の品質で量産する。一つのアカウントで固めた編集を、別のアカウントの素材にも。クライアントごとにメモリーは分かれます。</p></div>
-      </div>
+    <div class="who stagger">
+      <div class="card"><div class="photo"><img src="assets/seg-owner.jpg" width="1600" height="1063" loading="lazy" alt="花屋の店主が店内でスマートフォンを使って自分の縦動画を撮影している"></div><div class="body"><h3>オーナー・事業主</h3><p>週に数本の縦動画で、自分のサービスを届けている。編集は必要だけれど、編集が仕事ではない。一度決めた“うちの動画の型”を、毎回同じ手つきで。</p></div></div>
+      <div class="card"><div class="photo"><img src="assets/seg-team.jpg" width="1600" height="1063" loading="lazy" alt="オフィスで三人のチームがスマートフォンとノートパソコンで縦動画を確認している"></div><div class="body"><h3>SNS 運用会社・チーム</h3><p>複数のアカウントを、一定の品質で量産する。一つのアカウントで固めた編集を、別のアカウントの素材にも。クライアントごとにメモリーは分かれます。</p></div></div>
     </div>
-    <p class="fine" style="margin-top:18px">作品としての唯一無二の編集を追求する方や、参考動画から“それっぽさ”を再現したい方には向いていません。Motif AI が覚えるのは、あなた自身が組み立てた編集だけです。</p>
+    <p class="fine reveal" style="margin-top:18px">作品としての唯一無二の編集を追求する方や、参考動画から“それっぽさ”を再現したい方には向いていません。Motif AI が覚えるのは、あなた自身が組み立てた編集だけです。</p>
   </div>
 </section>
 
 <section class="section" id="privacy" aria-labelledby="privacy-heading">
   <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">データの扱い</span>
-      <h2 id="privacy-heading">素材は、あなたの Mac に残ります。</h2>
-      <p>クライアントの映像を預かる仕事だからこそ、何がどこへ行くかを先に書いておきます。</p>
+    <div class="section-head reveal">
+      <span class="mono">データの扱い</span>
+      <h2 id="privacy-heading">素材は、あなたの Mac に<em class="serif">残ります</em>。</h2>
+      <p>クライアントの映像を預かる仕事だからこそ、何がどこへ行くかを先に描いておきます。</p>
     </div>
-    <div class="privacy-grid">
-      <div class="card">
-        <h3><span class="pill no">送信なし</span>Mac の外に出ないもの</h3>
+    <div class="flow reveal">
+      <div class="node mac">
+        <span class="mono">あなたの Mac</span>
+        <h3>ここで処理され、ここに残る</h3>
         <ul>
           <li>映像・音声ファイルそのもの</li>
           <li>Premiere のプロジェクトファイル</li>
-          <li>文字起こし（Mac 内で処理）</li>
+          <li>文字起こし（whisper.cpp をローカルで実行）</li>
           <li>確認用フレーム、編集プラン、編集履歴</li>
+          <li>スタイルプロファイルとルール（同期は任意）</li>
         </ul>
+        <div class="stays">動画のアップロードはありません</div>
       </div>
-      <div class="card">
-        <h3><span class="pill">送られるもの</span>あなたが選んだ範囲だけ</h3>
-        <ul>
-          <li>Claude への指示文と、その応答（Anthropic のサーバー）</li>
-          <li>確認を求めたときの、縮小した静止画フレーム 1 枚（Claude へ）</li>
-          <li>クラウド同期を有効にした場合のみ：スタイル・承認ルール・ライブラリの静止画や効果音（1 件 25 MB まで、ご自身のアカウント内）</li>
-        </ul>
+      <div class="wires" aria-hidden="true">
+        <div class="wire"><svg viewBox="0 0 130 40" preserveAspectRatio="none"><line x1="0" y1="20" x2="130" y2="20"/></svg><span class="lbl">指示文 · 縮小フレーム 1 枚</span></div>
+        <div class="wire off"><svg viewBox="0 0 130 40" preserveAspectRatio="none"><line x1="0" y1="20" x2="130" y2="20"/></svg><span class="lbl">任意 · 既定ではオフ</span></div>
+      </div>
+      <div class="remotes">
+        <div class="node remote">
+          <span class="mono">Anthropic</span>
+          <h3>Claude</h3>
+          <ul><li>あなたの指示文と、Motif AI の応答（タイムラインの要約）</li><li>確認を求めたときだけ、縮小した静止画 1 枚</li></ul>
+        </div>
+        <div class="node remote optional">
+          <span class="mono">Motif AI クラウド同期</span>
+          <h3>有効にした場合のみ</h3>
+          <ul><li>スタイル・承認ルール・承認待ちの提案</li><li>ライブラリの静止画・効果音（1 件 25 MB まで）</li></ul>
+        </div>
       </div>
     </div>
-    <p style="margin-top:18px"><a class="text-link" href="privacy.html">プライバシーポリシーの全文を読む</a></p>
+    <p class="reveal" style="margin-top:22px"><a class="text-link" href="privacy.html">プライバシーポリシーの全文を読む</a></p>
   </div>
 </section>
 
 <section class="section" id="pricing" aria-labelledby="pricing-heading">
   <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">料金</span>
+    <div class="section-head reveal">
+      <span class="mono">料金</span>
       <h2 id="pricing-heading">プランは、ひとつ。</h2>
     </div>
-    <div class="price-card">
+    <div class="price-card reveal">
       <div>
-        <div class="plan">早期アクセス（ベータ）</div>
+        <div class="plan">早期アクセス · ベータ</div>
         <div class="amount">¥2,980<small>/ 月（税込）</small></div>
         <ul class="checks">
           <li>Premiere Pro パネルと Claude Desktop コネクタ（Mac 1 台・1 名）</li>
@@ -272,7 +242,7 @@
           <li>いつでも解約。初回契約は 7 日以内なら全額返金</li>
         </ul>
         <a class="btn btn-primary btn-lg" href="access.html">早期アクセスに申し込む</a>
-        <p class="fine">お支払いはクレジットカード（Stripe）。<a class="text-link" href="pricing.html">料金の詳細</a></p>
+        <p class="fine">お支払いはクレジットカード（Stripe）。<a class="text-link plain" href="pricing.html">料金の詳細</a></p>
       </div>
       <div>
         <table class="compare">
@@ -288,11 +258,11 @@
 
 <section class="section" id="faq" aria-labelledby="faq-heading">
   <div class="narrow">
-    <div class="section-head center">
-      <span class="eyebrow">FAQ</span>
+    <div class="section-head center reveal">
+      <span class="mono">FAQ</span>
       <h2 id="faq-heading">よくある質問</h2>
     </div>
-    <div class="faq">
+    <div class="faq reveal">
       <details><summary>どんな動画に向いていますか？</summary><div class="answer"><p>話者一人の縦型ショート（Instagram リール、YouTube Shorts、TikTok）で、テロップが主役の編集に最適化しています。横型や多人数の対談、ドキュメンタリー的な編集は、現時点では想定していません。</p></div></details>
       <details><summary>自分の編集スタイルは、どうやって覚えるのですか？</summary><div class="answer"><p>完成した Premiere プロジェクトから、テロップの書式・配置・行分割、カットの間、SE と静止画の使い方、カラーグレードを読み取り、「ルール」として提案します。あなたが承認したルールだけが記憶に残ります。</p><p>他人の動画（MP4）を眺めて“それっぽく”学習する機能はありません。覚えるのは、あなた自身が組み立てた編集だけです。</p></div></details>
       <details><summary>生成された結果は、自分で編集できますか？</summary><div class="answer"><p>はい。テロップは Essential Graphics、カットはクリップの分割と削除、SE はオーディオクリップ、色は Lumetri として、Premiere のネイティブなオブジェクトで配置されます。文言もタイミングも位置も手で直せて、一手ごとに Undo できます。</p></div></details>
@@ -305,13 +275,13 @@
   </div>
 </section>
 
-<section class="section section-dark closing" aria-labelledby="closing-heading">
-  <div class="narrow">
-    <span class="eyebrow">早期アクセス</span>
-    <h2 id="closing-heading">次の一本から、<br>組み直さない。</h2>
+<section class="section closing" aria-labelledby="closing-heading">
+  <div class="narrow reveal">
+    <span class="mono">早期アクセス</span>
+    <h2 id="closing-heading" style="margin-top:18px">次の一本から、<br><em class="serif">組み直さない</em>。</h2>
     <p>早期アクセスは順次ご案内しています。まずは、普段つくっている動画のことを聞かせてください。合わないと思えば、そうお伝えします。</p>
     <div class="actions">
-      <a class="btn btn-lime btn-lg" href="access.html">早期アクセスに申し込む</a>
+      <a class="btn btn-primary btn-lg" href="access.html">早期アクセスに申し込む</a>
       <a class="btn btn-secondary btn-lg" href="access.html#form">まず相談する</a>
     </div>
   </div>

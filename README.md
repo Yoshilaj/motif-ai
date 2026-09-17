@@ -10,8 +10,8 @@ Motif AI（モティフAI）の公式サイト。GitHub Pages で `main` のル�
 | `thanks.html` | Stripe 決済後の戻り先 |
 | `privacy.html` / `terms.html` / `tokushoho.html` | プライバシーポリシー・利用規約・特定商取引法に基づく表記 |
 | `404.html` | GitHub Pages の 404 |
-| `site.css` / `site.js` | 全ページ共通のスタイルと、メニュー・動画・相談フォームのスクリプト |
-| `assets/` | 画像・動画（Higgsfield で生成したイメージ素材を web 用に変換したもの）、favicon、OG 画像 |
+| `site.css` / `site.js` | 全ページ共通のスタイル（ダーク基調・Geist / Noto Sans JP・黄緑アクセント）と、ナビ・スクロール連動の製品ステージ・出現アニメーション・カウントアップ・相談フォームのスクリプト |
+| `assets/` | 画像・動画（Higgsfield で生成したイメージ素材を web 用に変換したもの）、favicon、OG 画像。`ui-scrub.mp4` はトップのスクロール連動ステージ用（キーフレーム間隔を短くエンコード）、`ui-hero.jpg` はそのポスター、`step-*.jpg` は同じ画面の切り出し |
 | `CNAME` | カスタムドメイン `motif-ai.app` |
 
 ## プレビュー
@@ -27,6 +27,10 @@ python3 -m http.server 4173 --bind 127.0.0.1
 - **申し込み** — `access.html` の「Stripe で申し込む」は Stripe Payment Link（本番）。決済後は `thanks.html` に戻ります。
 - **相談フォーム** — `access.html` の `#access-form` は `https://motif-ai-license.fly.dev/v1/access/request` に JSON を POST します（ライセンスサービス `apps/backend`、CORS は `motif-ai.app` のみ許可）。送信内容はサービスの volume に保存され、Resend で運営者へメールされます。
 - **フォント** — Google Fonts（Noto Sans JP / Inter）。それ以外の外部読み込み、アクセス解析、Cookie はありません。
+
+## 確認用
+
+`index.html?review` を付けて開くと、スクロール連動のステージを通常のブロックに戻し、出現アニメーション待ちの要素をすべて表示した状態になります。ヘッドレスブラウザーでスクリーンショットを撮るときに使います。
 
 ## 更新するとき
 
