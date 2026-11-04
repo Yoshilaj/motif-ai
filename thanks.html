@@ -3,73 +3,77 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0e100e">
-<title>お申し込みありがとうございます｜Motif AI</title>
-<meta name="description" content="Motif AI のお申し込みが完了しました。次のステップをご案内します。">
+<meta name="theme-color" content="#0b0b0c">
+<title>プロプランへようこそ｜Motif</title>
 <meta name="robots" content="noindex">
-<link rel="canonical" href="https://motif-ai.app/thanks.html">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Motif AI">
-<meta property="og:title" content="お申し込みありがとうございます｜Motif AI">
-<meta property="og:description" content="Motif AI のお申し込みが完了しました。次のステップをご案内します。">
-<meta property="og:url" content="https://motif-ai.app/thanks.html">
-<meta property="og:image" content="https://motif-ai.app/assets/og.png">
-<meta property="og:locale" content="ja_JP">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@1&family=Noto+Sans+JP:wght@400;500;700;900&family=Zen+Old+Mincho:wght@700&display=swap">
-<link rel="stylesheet" href="site.css">
-<script src="site.js" defer></script>
+<!--
+  Where Stripe sends the person after paying for プロプラン in the Motif app (?from=app), after the Customer Portal
+  (?from=portal), or when they leave Checkout without paying (?from=cancel). One job: back to the app — motif:// opens
+  it (registered by the app, src/desktop/main.ts). Self-contained on purpose: the rest of the site still describes the
+  Premiere product and is redone with the landing page.
+-->
+<style>
+  :root { color-scheme: dark; --bg: #0b0b0c; --fg: #f4f4f5; --dim: rgba(255,255,255,.58); --faint: rgba(255,255,255,.38); --line: rgba(255,255,255,.09); }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body { background: radial-gradient(1200px 600px at 50% -10%, #1a1c22 0%, var(--bg) 60%); color: var(--fg); font: 15px/1.7 -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif; font-feature-settings: "palt"; -webkit-font-smoothing: antialiased; display: flex; flex-direction: column; min-height: 100vh; }
+  header { padding: 22px 28px; }
+  .mark { display: inline-flex; align-items: center; gap: 8px; color: var(--fg); text-decoration: none; font-weight: 700; letter-spacing: .02em; font-size: 15px; }
+  .mark svg { width: 20px; height: 20px; }
+  main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 24px 24px 72px; }
+  .card { width: 100%; max-width: 480px; text-align: center; }
+  .badge { width: 56px; height: 56px; margin: 0 auto 26px; border-radius: 50%; display: grid; place-items: center; border: 1px solid var(--line); background: rgba(255,255,255,.04); }
+  .badge svg { width: 24px; height: 24px; }
+  h1 { margin: 0 0 12px; font-size: 28px; line-height: 1.35; font-weight: 700; letter-spacing: .01em; }
+  .lead { margin: 0 auto 32px; max-width: 400px; color: var(--dim); }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 48px; padding: 0 28px; border-radius: 999px; background: #fff; color: #0b0b0c; font-weight: 700; font-size: 15px; text-decoration: none; transition: transform .15s ease, background .15s ease; }
+  .btn:hover { background: #e9e9ec; }
+  .btn:active { transform: scale(.98); }
+  .btn svg { width: 16px; height: 16px; }
+  .hint { margin: 14px 0 0; font-size: 12.5px; color: var(--faint); }
+  .rows { margin: 40px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); text-align: left; }
+  .rows li { display: flex; justify-content: space-between; gap: 16px; padding: 14px 2px; border-bottom: 1px solid var(--line); font-size: 13.5px; }
+  .rows li span:first-child { color: var(--dim); white-space: nowrap; }
+  .rows li > :last-child { text-align: right; }
+  .rows a { color: var(--fg); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.25); }
+  [hidden] { display: none !important; }
+</style>
 </head>
 <body>
-<a class="skip-link" href="#main">本文へ進む</a>
-<header class="site-header">
-  <div class="nav">
-    <a class="wordmark" href="./" aria-label="Motif AI ホーム"><span class="dot" aria-hidden="true"></span>Motif AI<span class="ja">モティフAI</span></a>
-    <nav class="site-nav" aria-label="メインナビゲーション"><a href="./#how">仕組み</a><a href="./#features">できること</a><a href="pricing.html">料金</a><a href="access.html">はじめ方</a><a href="./#faq">FAQ</a></nav>
-    <div class="header-cta"><a class="btn btn-primary btn-sm" href="access.html">早期アクセスに申し込む</a></div>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav">メニュー</button>
-  </div>
-  <nav id="mobile-nav" class="mobile-nav" aria-label="モバイルナビゲーション" hidden><a href="./#how">仕組み</a><a href="./#features">できること</a><a href="pricing.html">料金</a><a href="access.html">はじめ方</a><a href="./#faq">FAQ</a><a class="btn btn-primary" href="access.html">早期アクセスに申し込む</a></nav>
+<header>
+  <a class="mark" href="./" aria-label="Motif"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 15.5V5l6.5 7 6.5-7v10.5"/></svg>Motif</a>
 </header>
-<main id="main">
-<section class="page-hero">
-  <div class="narrow">
-    <span class="label">お申し込み完了</span>
-    <h1>ありがとうございます</h1>
-    <p>Motif AI の決済が完了しました。決済に使ったメールアドレスへ、ダウンロードリンクと手順をお送りします。</p>
+<main>
+  <div class="card">
+    <div class="badge" aria-hidden="true"><svg id="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+    <h1 id="title">プロプランへようこそ</h1>
+    <p class="lead" id="lead">お支払いが完了しました。Motif に戻ると、チャットでの編集、AI の機能、新しいスタイルの作成を、すぐにお使いいただけます。</p>
+    <a class="btn" href="motif://open">Motif に戻る<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.5 4.5 13 10l-5.5 5.5"/></svg></a>
+    <p class="hint">開かない場合は、このページを閉じて Motif のウィンドウに戻ってください。</p>
+    <ul class="rows">
+      <li id="row-receipt"><span>領収書</span><span>お支払いに使ったメールアドレスへお送りしました</span></li>
+      <li><span>プランの確認・解約</span><span>Motif の 設定 › プラン</span></li>
+      <li><span>お問い合わせ</span><a href="mailto:yoshil061111@gmail.com">yoshil061111@gmail.com</a></li>
+    </ul>
   </div>
-</section>
-<section class="section" style="padding-top:8px">
-  <div class="narrow">
-    <div class="timeline">
-      <div class="tl-step"><div><h3>ご案内メールを確認</h3><p>数分経っても届かない場合は、迷惑メールフォルダをご確認のうえ <a class="text-link plain" href="mailto:yoshil061111@gmail.com">yoshil061111@gmail.com</a> までご連絡ください。</p></div></div>
-      <div class="tl-step"><div><h3>インストールして、パネルでサインイン</h3><p>手順は<a class="text-link plain" href="access.html">はじめ方</a>にまとめています。パスワードは、パネルの「パスワードを設定・再設定」から決済に使ったメールアドレスで設定します。</p></div></div>
-      <div class="tl-step"><div><h3>気づいたことは、なんでも</h3><p>ベータ期間中は、動作しない場面や対応していない操作があります。小さなことでもお知らせいただけると助かります。</p></div></div>
-    </div>
-    <p class="fine" style="margin-top:24px">解約・返金は<a class="text-link plain" href="terms.html#refund">利用規約 第5条</a>をご覧ください。初回契約は 7 日以内なら全額返金します。</p>
-    <p style="margin-top:20px"><a class="btn btn-secondary" href="./">トップページへ戻る</a></p>
-  </div>
-</section>
 </main>
-<footer class="site-footer">
-  <div class="container">
-    <div class="top">
-      <a class="wordmark" href="./"><span class="dot" aria-hidden="true"></span>Motif AI<span class="ja">モティフAI</span></a>
-      <nav aria-label="フッターナビゲーション">
-        <a href="pricing.html">料金</a>
-        <a href="access.html">はじめ方</a>
-        <a href="privacy.html">プライバシーポリシー</a>
-        <a href="terms.html">利用規約</a>
-        <a href="tokushoho.html">特定商取引法に基づく表記</a>
-        <a href="mailto:yoshil061111@gmail.com">お問い合わせ</a>
-      </nav>
-    </div>
-    <p class="legal">Motif AI は Adobe Premiere Pro のパネルと Anthropic Claude Desktop のコネクタとして動作する、独立した製品です。Adobe、Premiere Pro は Adobe Inc. の商標です。Claude は Anthropic PBC の商標です。Motif AI はいずれとも提携関係にありません。ページ内の人物写真・映像は、機能を説明するための生成イメージです。</p>
-    <p class="copy">© 2026 Motif AI</p>
-  </div>
-</footer>
+<script>
+  // ?from=portal — back from Stripe's Customer Portal; ?from=cancel — left Checkout without paying.
+  const from = new URLSearchParams(location.search).get("from");
+  const set = (id, text) => { document.getElementById(id).textContent = text; };
+  if (from === "portal") {
+    document.title = "お手続きが完了しました｜Motif";
+    set("title", "お手続きが完了しました");
+    set("lead", "変更した内容は、Motif にすぐ反映されます。");
+    document.getElementById("row-receipt").hidden = true;
+  } else if (from === "cancel") {
+    document.title = "お支払いは完了していません｜Motif";
+    set("title", "お支払いは完了していません");
+    set("lead", "料金は発生していません。Motif に戻って、いつでもプロプランにアップグレードできます。");
+    document.getElementById("icon").innerHTML = '<path d="M7 7l10 10M17 7 7 17"/>';
+    document.getElementById("row-receipt").hidden = true;
+  }
+</script>
 </body>
 </html>
