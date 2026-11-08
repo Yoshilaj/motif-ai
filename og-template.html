@@ -1,19 +1,28 @@
-<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600;700&family=Noto+Sans+JP:wght@500;700;900&display=swap">
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<!-- Source of assets/og.png (1200×630): render with a headless browser at 1200×630, DPR 1. -->
 <style>
-html,body{margin:0}
-body{width:1200px;height:630px;background:#0e100e;color:#f4f5f0;font-family:"Geist","Noto Sans JP",sans-serif;font-feature-settings:"palt" 1;position:relative;overflow:hidden}
-.glow{position:absolute;left:-10%;top:-40%;width:70%;height:120%;background:radial-gradient(closest-side,rgba(201,245,98,.16),transparent)}
-.wrap{position:absolute;inset:0;padding:72px 80px;display:flex;flex-direction:column;justify-content:space-between}
-.mark{display:flex;align-items:center;gap:12px;font-family:Geist,sans-serif;font-weight:700;font-size:28px}
-.mark .dot{width:14px;height:14px;border-radius:50%;background:#c9f562;box-shadow:0 0 0 5px rgba(201,245,98,.25)}
-.mark .ja{font-family:"Noto Sans JP";font-weight:500;font-size:18px;color:#a6ab9f;margin-left:4px}
-h1{margin:0;font-size:62px;line-height:1.3;letter-spacing:-.035em;font-weight:700}
-p{margin:18px 0 0;font-size:24px;color:#a6ab9f;line-height:1.6}
-.tags{display:flex;gap:10px}
-.tag{border:1px solid #2b302a;border-radius:999px;padding:8px 18px;font-size:18px;color:#c9f562;font-weight:500}
-</style></head><body><div class="glow"></div><div class="wrap">
-<div class="mark"><span class="dot"></span>Motif AI<span class="ja">モティフAI</span></div>
-<div><h1>いつもの編集を、<br>Premiere Pro が覚えている</h1><p>一度組み立てた編集を、次の素材に同じ手つきで</p></div>
-<div class="tags"><span class="tag">Premiere Pro パネル</span><span class="tag">Claude Desktop 連携</span><span class="tag">macOS</span><span class="tag">早期アクセス</span></div>
-</div></body></html>
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; background: #060914; color: #fff;
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", -apple-system, sans-serif; font-feature-settings: "palt"; -webkit-font-smoothing: antialiased; }
+  .glow { position: absolute; inset: 0; }
+  .glow i { position: absolute; bottom: -260px; width: 760px; height: 520px; border-radius: 50%; filter: blur(90px); }
+  .glow i:nth-child(1) { left: -220px; background: #075c96; opacity: .75; }
+  .glow i:nth-child(2) { left: 300px; background: #39aecb; opacity: .35; }
+  .glow i:nth-child(3) { right: -260px; background: #f39174; opacity: .35; }
+  .brand { position: absolute; left: 72px; top: 64px; display: flex; align-items: center; gap: 14px; font: 600 34px/1 -apple-system, sans-serif; letter-spacing: -.02em; }
+  .brand img { width: 44px; height: 44px; }
+  h1 { position: absolute; left: 72px; top: 168px; margin: 0; font-size: 64px; line-height: 1.3; font-weight: 700; letter-spacing: .01em; }
+  p { position: absolute; left: 74px; top: 362px; margin: 0; font-size: 25px; line-height: 1.7; font-weight: 500; color: #ffffffa0; letter-spacing: .03em; }
+  .tags { position: absolute; left: 72px; bottom: 64px; display: flex; gap: 10px; }
+  .tags span { padding: 8px 18px; border-radius: 999px; border: 1px solid #ffffff2e; background: #ffffff0d; font-size: 19px; font-weight: 600; color: #e9eef5; }
+  .shot { position: absolute; left: 700px; top: 150px; width: 560px; height: 520px; overflow: hidden; border-radius: 16px; border: 1px solid #ffffff22; box-shadow: 0 30px 70px -20px #000; }
+  .shot img { position: absolute; left: -432px; top: -18px; width: 1100px; }
+</style></head>
+<body>
+  <div class="glow"><i></i><i></i><i></i></div>
+  <div class="shot"><img src="assets/hero-demo-poster.jpg" alt=""></div>
+  <div class="brand"><img src="assets/motif-mark.svg" alt="">Motif</div>
+  <h1>あなたの編集を、<br>次の一本にも</h1>
+  <p>作りたい動画を伝えるだけ<br>あなたのスタイルで、AI が仕上げます</p>
+  <div class="tags"><span>Mac アプリ</span><span>7日間無料</span><span>カード登録不要</span></div>
+</body></html>

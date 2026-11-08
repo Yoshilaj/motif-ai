@@ -1,273 +1,497 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0e100e">
-<title>Motif AI｜いつもの編集を、Premiere Pro が覚えている。</title>
-<meta name="description" content="テロップ・カット・SE・色。あなたが一度組み立てた編集を Motif AI が記憶し、次の素材に同じ手つきで再現します。結果はすべて Premiere Pro の編集可能なタイムライン。macOS・ベータ・月額 2,980 円。">
-<link rel="canonical" href="https://motif-ai.app/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Motif AI">
-<meta property="og:title" content="Motif AI｜いつもの編集を、Premiere Pro が覚えている。">
-<meta property="og:description" content="テロップ・カット・SE・色。あなたが一度組み立てた編集を Motif AI が記憶し、次の素材に同じ手つきで再現します。結果はすべて Premiere Pro の編集可能なタイムライン。macOS・ベータ・月額 2,980 円。">
-<meta property="og:url" content="https://motif-ai.app/">
-<meta property="og:image" content="https://motif-ai.app/assets/og.png">
-<meta property="og:locale" content="ja_JP">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@1&family=Noto+Sans+JP:wght@400;500;700;900&family=Zen+Old+Mincho:wght@700&display=swap">
-<link rel="stylesheet" href="site.css">
-<link rel="preload" href="assets/ui-hero.jpg" as="image">
-<script src="site.js" defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://motif-ai.app/">
+  <title>Motif — 撮った動画を、頼むだけで仕上げる AI 動画編集</title>
+  <meta name="description" content="素材を入れて、何をつくるか書くだけ。カット・テロップ・BGM・グラフィックまで AI が編集し、あなたのスタイルを覚えて次の動画にも活かします。7日間無料、カード登録不要。">
+  <link rel="icon" href="assets/motif-mark.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Motif">
+  <meta property="og:title" content="Motif — 撮った動画を、頼むだけで仕上げる AI 動画編集">
+  <meta property="og:description" content="素材を入れて、何をつくるか書くだけ。あなたのスタイルを覚えて、次の動画にも活かします。7日間無料、カード登録不要。">
+  <meta property="og:url" content="https://motif-ai.app/">
+  <meta property="og:image" content="https://motif-ai.app/assets/og.png">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="layout.css?v=20261108f">
+  <link rel="stylesheet" href="color-design.css?v=20261108f">
+  <link rel="stylesheet" href="lp-refine.css?v=20261108f">
+  <link rel="stylesheet" href="lp-demos.css?v=20261108f">
+  <script src="lp-spectrum.js?v=20261108f" defer></script>
+  <script src="lp-demos.js?v=20261108f" defer></script>
 </head>
 <body>
-<a class="skip-link" href="#main">本文へ進む</a>
-<header class="site-header">
-  <div class="nav">
-    <a class="wordmark" href="./" aria-label="Motif AI ホーム"><span class="dot" aria-hidden="true"></span>Motif AI<span class="ja">モティフAI</span></a>
-    <nav class="site-nav" aria-label="メインナビゲーション"><a href="#how">仕組み</a><a href="#features">できること</a><a href="pricing.html">料金</a><a href="access.html">はじめ方</a><a href="#faq">FAQ</a></nav>
-    <div class="header-cta"><a class="btn btn-primary btn-sm" href="access.html">早期アクセスに申し込む</a></div>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav">メニュー</button>
-  </div>
-  <nav id="mobile-nav" class="mobile-nav" aria-label="モバイルナビゲーション" hidden><a href="#how">仕組み</a><a href="#features">できること</a><a href="pricing.html">料金</a><a href="access.html">はじめ方</a><a href="#faq">FAQ</a><a class="btn btn-primary" href="access.html">早期アクセスに申し込む</a></nav>
-</header>
-<main id="main">
-<section class="hero" aria-labelledby="hero-heading">
-  <div class="container">
-    <h1 id="hero-heading">いつもの編集を、<br>Premiere Pro が覚えている</h1>
-    <p class="lead">一度組み立てた編集を、次の素材に同じ手つきで。仕上げは、いつものタイムラインで。</p>
-    <div class="actions">
-      <a class="btn btn-primary btn-lg" href="access.html">早期アクセスに申し込む</a>
-      <a class="btn btn-secondary btn-lg" href="#how">仕組みを見る</a>
-    </div>
-  </div>
-</section>
-
-<div class="stage-wrap" aria-label="Premiere Pro の中で Motif AI がタイムラインを編集しているイメージ">
-  <div class="stage">
-    <div class="product">
-      <div class="glow-card">
-        <div class="media">
-          <video autoplay muted loop playsinline preload="auto" poster="assets/ui-hero.jpg">
-            <source src="assets/ui-scrub.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="stage-meta">
-        <div class="stats" aria-label="実際のリール 1 本を再現した際の一例">
-          <div class="stat"><b><span data-count="36">0</span></b><span>テロップ</span></div>
-          <div class="stat"><b><span data-count="12">0</span></b><span>カット</span></div>
-          <div class="stat"><b><span data-count="5">0</span></b><span>静止画・SE</span></div>
-          <div class="stat"><b><span data-count="1">0</span></b><span>グレード</span></div>
-          <div class="stat"><b>∞</b><span>取り消し可</span></div>
-        </div>
-        <p class="stage-note">画面はイメージです。数値は実際のリール（33 秒）を再現した際の一例。</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="marquee" aria-label="Motif AI が覚えるもの">
-  <div class="marquee-track">
-    <span class="chip"><i></i>書体</span><span class="chip"><i></i>文字サイズ</span><span class="chip"><i></i>テロップの位置</span><span class="chip"><i></i>行の分け方</span><span class="chip"><i></i>強調色</span><span class="chip"><i></i>カットの間</span><span class="chip"><i></i>SE のタイミング</span><span class="chip"><i></i>音量</span><span class="chip"><i></i>静止画の置き方</span><span class="chip"><i></i>LUT と Lumetri</span><span class="chip"><i></i>クリップの尻尾</span><span class="chip"><i></i>クライアントごとの違い</span>
-    <span class="chip"><i></i>書体</span><span class="chip"><i></i>文字サイズ</span><span class="chip"><i></i>テロップの位置</span><span class="chip"><i></i>行の分け方</span><span class="chip"><i></i>強調色</span><span class="chip"><i></i>カットの間</span><span class="chip"><i></i>SE のタイミング</span><span class="chip"><i></i>音量</span><span class="chip"><i></i>静止画の置き方</span><span class="chip"><i></i>LUT と Lumetri</span><span class="chip"><i></i>クリップの尻尾</span><span class="chip"><i></i>クライアントごとの違い</span>
-  </div>
-</div>
-
-<section class="section tight" aria-label="Motif AI の前提">
-  <div class="container">
-    <div class="trust stagger">
-      <div class="item"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div><b>映像は Mac の外に出ません</b><span>処理はローカル。動画のアップロードはありません。</span></div>
-      <div class="item"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg></div><b>Premiere のネイティブオブジェクト</b><span>書き出しではなく、編集できるタイムラインが残ります。</span></div>
-      <div class="item"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14L4 9l5-5"/><path d="M4 9h11a5 5 0 0 1 0 10h-3"/></svg></div><b>すべて取り消し可能</b><span>実行前に検証し、一手ごとに Undo できます。</span></div>
-      <div class="item"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div><b>覚えるのは、承認したルールだけ</b><span>提案 → あなたが承認 → 次の動画から適用。</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="how" aria-labelledby="how-heading">
-  <div class="container">
-    <div class="section-head center reveal">
-      <h2 id="how-heading">一本つくる。<em class="serif">いつもの</em>を、覚える。<br>次の素材に、同じ手つきで</h2>
-      <p>完成した動画を眺めて“それっぽく”真似るのではなく、あなたが Premiere で組み立てた構成そのものを読み取ります。テロップの型、カットの間、SE と静止画の置き方、色まで。</p>
-      <div class="actions" style="justify-content:center;margin-top:28px"><a class="btn btn-primary" href="access.html">早期アクセスに申し込む</a><a class="btn btn-secondary" href="#features">できることを見る</a></div>
-    </div>
-    <div class="steps stagger">
-      <div class="step">
-        <div class="shot"><img src="assets/step-timeline.jpg" width="1400" height="875" loading="lazy" alt="Premiere Pro のタイムライン。AI · Telop トラックに黄緑のテロップクリップが並んでいる"></div>
-        <div class="body"><span class="label">01 · いつも通りにつくる</span><h3>Premiere で、一本編集する</h3><p>プロジェクトから、テロップの書式と配置、カットの間、SE と静止画の使い方、カラーグレードを読み取ります。</p></div>
-      </div>
-      <div class="step">
-        <div class="shot"><img src="assets/step-rules.jpg" width="1400" height="933" loading="lazy" alt="Motif AI パネル。編集のルールが並び、承認済みのものにチェックが付いている"></div>
-        <div class="body"><span class="label">02 · ルールを承認する</span><h3>提案は読める。承認は、あなた</h3><p>読み取った構成は「ルール」として提案されます。承認したものだけが記憶に残り、却下したものは二度と提案されません。</p></div>
-      </div>
-      <div class="step">
-        <div class="shot"><img src="assets/step-monitor.jpg" width="1400" height="933" loading="lazy" alt="プログラムモニター。新しい素材にいつものテロップスタイルが載っている"></div>
-        <div class="body"><span class="label">03 · 次の素材に適用する</span><h3>フォルダを指す。あとは質問に答えるだけ</h3><p>Claude Desktop で素材のフォルダを指定。承認済みのルールで編集し、判断が分かれる箇所だけ聞いてきます。</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="architecture" aria-labelledby="arch-heading">
-  <div class="container">
-    <div class="section-head center reveal">
-      <h2 id="arch-heading">指示は Claude から。<br>結果は、Premiere に</h2>
-    </div>
-    <div class="arch reveal" role="img" aria-label="Claude Desktop、Motif AI コネクタ、Premiere Pro の三つが双方向につながっている図">
-      <div class="arch-node">
-        <div class="arch-glyph" style="color:var(--ink-2)"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 13a4 4 0 0 1 4-4h24a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H21l-9 6v-6a4 4 0 0 1-4-4z"/><path d="M16 18h16M16 25h10"/></svg></div>
-        <div class="arch-name">Claude Desktop</div>
-        <div class="arch-role">指示する</div>
-      </div>
-      <div class="arch-link" aria-hidden="true"><span class="rail"><i></i></span><span class="rail back"><i></i></span></div>
-      <div class="arch-node core">
-        <div class="arch-glyph" style="color:var(--lime)"><svg viewBox="0 0 48 48" fill="none"><rect x="7" y="7" width="34" height="34" rx="11" stroke="currentColor" stroke-width="1.8"/><circle cx="24" cy="24" r="12.5" stroke="currentColor" stroke-width="1.2" opacity=".4"/><circle cx="24" cy="24" r="6.5" fill="currentColor"/></svg></div>
-        <div class="arch-name">Motif AI</div>
-        <div class="arch-role">おぼえて、つなぐ</div>
-      </div>
-      <div class="arch-link" aria-hidden="true"><span class="rail"><i></i></span><span class="rail back"><i></i></span></div>
-      <div class="arch-node">
-        <div class="arch-glyph" style="color:var(--ink-2)"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="11" width="19" height="7" rx="3.5"/><rect x="6" y="21" width="30" height="7" rx="3.5"/><rect x="6" y="31" width="13" height="7" rx="3.5"/><path d="M40 7v34" opacity=".55"/></svg></div>
-        <div class="arch-name">Premiere Pro</div>
-        <div class="arch-role">編集される</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="features" aria-labelledby="features-heading">
-  <div class="container">
-    <div class="section-head reveal">
-      <h2 id="features-heading">一本のリールを構成する、<br>六つの工程</h2>
-      <p>現在のベータ版は、話者一人の縦型ショート（リール・Shorts・TikTok）に最適化しています。</p>
-    </div>
-    <div class="features stagger">
-      <div class="feature"><div class="top"><h3>テロップ</h3><span class="mono">01</span></div><p>文字起こしをもとに、あなたの書式・位置・行分割・強調で配置。Essential Graphics として置かれるので、文言もタイミングも手で直せます。</p></div>
-      <div class="feature"><div class="top"><h3>カット提案</h3><span class="mono">02</span></div><p>文字起こしと間から、切る候補を提案。採用する境界は、話者が画面に収まり、目線がカメラにあるかまで確認してから決めます。</p></div>
-      <div class="feature"><div class="top"><h3>静止画・SE・音楽</h3><span class="eq" aria-hidden="true"><span style="--d:0s"></span><span style="--d:.15s"></span><span style="--d:.3s"></span><span style="--d:.45s"></span><span style="--d:.6s"></span></span></div><p>ライブラリの素材を、いつもの位置とタイミングで配置。音量は前回の値に合わせ、話し声と重なる SE は避けます。</p></div>
-      <div class="feature"><div class="top"><h3>カラーグレード</h3><span class="mono">04</span></div><p>一度つくった LUT と Lumetri の設定をテンプレートとして持ち運び、新しいシーケンスにそのまま適用します。</p></div>
-      <div class="feature"><div class="top"><h3>修正から学ぶ</h3><span class="mono">05</span></div><p>あなたが手で直した箇所を検出し、次回のルールとして提案。承認するまで、何も変わりません。</p></div>
-      <div class="feature"><div class="top"><h3>クライアント別メモリー</h3><span class="mono">06</span></div><p>アカウントやクライアントごとに独立したスタイルプロファイル。A の手つきが B に混ざることはありません。</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="inside" aria-labelledby="inside-heading">
-  <div class="container">
-    <div class="split reverse">
-      <div class="reveal">
-        <div class="glow-card"><div class="media"><video muted loop playsinline preload="metadata" data-loop autoplay poster="assets/editor-poster.jpg" aria-label="デスクで縦動画を編集している人物のイメージ映像"><source src="assets/editor.mp4" type="video/mp4"></video></div></div>
-      </div>
-      <div class="reveal" style="--i:1">
-        <h2 id="inside-heading">書き出しは、しません。<br>編集できる状態で、<em class="serif">返します</em></h2>
-        <p>生成されるのはすべて Premiere のネイティブなクリップ・グラフィック・エフェクト。手で直せて、Undo できて、いつもの書き出しへ。</p>
-        <div class="mini">
-          <div class="box"><b>専用トラック「AI ·」に配置</b><span>既存のトラックには触りません。</span></div>
-          <div class="box"><b>実行前に検証、一手ごとに Undo</b><span>実行後は確認フレームで結果を見ます。</span></div>
-          <div class="box"><b>映像は Mac の外に出ません</b><span>動画のアップロードはありません。</span></div>
-          <div class="box"><b>文字起こしは Mac 内で完結</b><span>whisper.cpp をローカルで実行します。</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="who" aria-labelledby="who-heading">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="label">こんな方に</span>
-      <h2 id="who-heading">自分の商品を、自分の動画で売る人へ</h2>
-      <p>動画は目的ではなく手段。一定の品質で、数を出し続けたい。そういう使い方のためにつくっています。</p>
-    </div>
-    <div class="who stagger">
-      <div class="card"><div class="photo"><img src="assets/seg-owner.jpg" width="1600" height="1063" loading="lazy" alt="花屋の店主が店内でスマートフォンを使って自分の縦動画を撮影している"></div><div class="body"><h3>オーナー・事業主</h3><p>週に数本の縦動画で、自分のサービスを届けている。編集は必要だけれど、編集が仕事ではない。一度決めた“うちの動画の型”を、毎回同じ手つきで。</p></div></div>
-      <div class="card"><div class="photo"><img src="assets/seg-team.jpg" width="1600" height="1063" loading="lazy" alt="オフィスで三人のチームがスマートフォンとノートパソコンで縦動画を確認している"></div><div class="body"><h3>SNS 運用会社・チーム</h3><p>複数のアカウントを、一定の品質で量産する。一つのアカウントで固めた編集を、別のアカウントの素材にも。クライアントごとにメモリーは分かれます。</p></div></div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="pricing" aria-labelledby="pricing-heading">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="label">料金</span>
-      <h2 id="pricing-heading">ベータ版プラン</h2>
-    </div>
-    <div class="price-card reveal">
-      <div>
-        <div class="plan">早期アクセス · ベータ</div>
-        <div class="amount">¥2,980<small>/ 月（税込）</small></div>
-        <ul class="checks">
-          <li>Premiere Pro パネルと Claude Desktop コネクタ（Mac 1 台・1 名）</li>
-          <li>ベータ期間中に追加される機能の更新</li>
-          <li>メールでのサポート</li>
-          <li>いつでも解約。初回契約は 7 日以内なら全額返金</li>
-        </ul>
-        <a class="btn btn-primary btn-lg" href="access.html">早期アクセスに申し込む</a>
-        <p class="fine">お支払いはクレジットカード（Stripe）。<a class="text-link plain" href="pricing.html">料金の詳細</a></p>
-      </div>
-      <div>
-        <table class="compare">
-          <tr><th>別途必要</th><td>Adobe Premiere Pro（26.3.2 以降）／ Claude のプラン（Anthropic・Max 推奨）／ macOS</td></tr>
-          <tr><th>含まれないもの</th><td>Adobe と Anthropic の利用料。Motif AI は生成 AI の利用枠を販売しません</td></tr>
-          <tr><th>請求</th><td>ご契約日に初回分、以後は毎月同日に自動で</td></tr>
-          <tr><th>解約</th><td>メールでご連絡ください。次回以降の請求は止まり、支払い済みの期間はご利用いただけます</td></tr>
-        </table>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="faq" aria-labelledby="faq-heading">
-  <div class="narrow">
-    <div class="section-head center reveal">
-      <span class="mono">FAQ</span>
-      <h2 id="faq-heading">よくある質問</h2>
-    </div>
-    <div class="faq reveal">
-      <details><summary>どんな動画に向いていますか？</summary><div class="answer"><p>話者一人の縦型ショート（Instagram リール、YouTube Shorts、TikTok）で、テロップが主役の編集に最適化しています。横型や多人数の対談、ドキュメンタリー的な編集は、現時点では想定していません。</p></div></details>
-      <details><summary>自分の編集スタイルは、どうやって覚えるのですか？</summary><div class="answer"><p>完成した Premiere プロジェクトから、テロップの書式・配置・行分割、カットの間、SE と静止画の使い方、カラーグレードを読み取り、「ルール」として提案します。あなたが承認したルールだけが記憶に残ります。</p><p>他人の動画（MP4）を眺めて“それっぽく”学習する機能はありません。覚えるのは、あなた自身が組み立てた編集だけです。</p></div></details>
-      <details><summary>生成された結果は、自分で編集できますか？</summary><div class="answer"><p>はい。テロップは Essential Graphics、カットはクリップの分割と削除、SE はオーディオクリップ、色は Lumetri として、Premiere のネイティブなオブジェクトで配置されます。文言もタイミングも位置も手で直せて、一手ごとに Undo できます。</p></div></details>
-      <details><summary>対応環境を教えてください</summary><div class="answer"><p>macOS、Adobe Premiere Pro 26.3.2 以降（それより前のバージョンではパネルが起動しません）、Claude Desktop とご自身の Claude プランが必要です。文字起こしとカット提案には ffmpeg と whisper.cpp を使うため、付属のスクリプトでインストールしていただきます（1.6 GB のモデルを含みます）。</p></div></details>
-      <details><summary>Claude のプランは、どれが必要ですか？</summary><div class="answer"><p>Pro でも動作しますが、テロップの処理は多数のツール呼び出しが続く長い実行になるため、途中で制限にかかることがあります。Max をおすすめしています。Claude の利用料は Motif AI の料金に含まれません。</p></div></details>
-      <details><summary>動画がアップロードされることはありますか？</summary><div class="answer"><p>ありません。映像・音声ファイル、プロジェクトファイル、文字起こしは Mac の中で処理されます。Claude に送られるのは指示文と応答、それから確認を求めたときの縮小した静止画 1 枚だけです。詳しくは<a href="privacy.html">プライバシーポリシー</a>をご覧ください。</p></div></details>
-      <details><summary>複数のクライアントを担当しています。編集が混ざりませんか？</summary><div class="answer"><p>混ざりません。スタイルプロファイルはクライアント・アカウントごとに独立していて、それぞれ別のルールを持ちます。適用するときにプロファイルを指定します。</p></div></details>
-      <details><summary>解約と返金について</summary><div class="answer"><p>いつでも解約できます。ご登録のメールアドレスからご連絡いただければ、次回以降の請求を止め、支払い済みの期間が終わるまでご利用いただけます。初めてご契約の方は、初回決済から 7 日以内なら理由を問わず全額返金します。詳しくは<a href="terms.html#refund">利用規約</a>をご覧ください。</p></div></details>
-    </div>
-  </div>
-</section>
-
-<section class="section closing" aria-labelledby="closing-heading">
-  <div class="narrow reveal">
-    <span class="label">早期アクセス</span>
-    <h2 id="closing-heading" style="margin-top:18px">次の一本から、<br><em class="serif">組み直さない</em></h2>
-    <p>早期アクセスは順次ご案内しています。まずは、普段つくっている動画のことを聞かせてください。合わないと思えば、そうお伝えします。</p>
-    <div class="actions">
-      <a class="btn btn-primary btn-lg" href="access.html">早期アクセスに申し込む</a>
-      <a class="btn btn-secondary btn-lg" href="access.html#form">まず相談する</a>
-    </div>
-  </div>
-</section>
-</main>
-<footer class="site-footer">
-  <div class="container">
-    <div class="top">
-      <a class="wordmark" href="./"><span class="dot" aria-hidden="true"></span>Motif AI<span class="ja">モティフAI</span></a>
-      <nav aria-label="フッターナビゲーション">
-        <a href="pricing.html">料金</a>
-        <a href="access.html">はじめ方</a>
-        <a href="privacy.html">プライバシーポリシー</a>
-        <a href="terms.html">利用規約</a>
-        <a href="tokushoho.html">特定商取引法に基づく表記</a>
-        <a href="mailto:yoshil061111@gmail.com">お問い合わせ</a>
+  <a class="skip-link" href="#main">本文へ移動</a>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="wordmark" href="#"><img src="assets/motif-mark.svg" alt="" width="34" height="34">Motif</a>
+      <nav aria-label="メインメニュー">
+        <a href="#features">Motifについて</a>
+        <a href="#how">使い方</a>
+        <a href="#pricing">料金プラン</a>
+        <a href="#faq">よくある質問</a>
       </nav>
+      <a class="nav-download" href="download.html">無料で試す</a>
     </div>
-    <p class="legal">Motif AI は Adobe Premiere Pro のパネルと Anthropic Claude Desktop のコネクタとして動作する、独立した製品です。Adobe、Premiere Pro は Adobe Inc. の商標です。Claude は Anthropic PBC の商標です。Motif AI はいずれとも提携関係にありません。ページ内の人物写真・映像は、機能を説明するための生成イメージです。</p>
-    <p class="copy">© 2026 Motif AI</p>
-  </div>
-</footer>
+  </header>
+
+  <main id="main">
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-spectrum" aria-hidden="true">
+        <div class="spectrum-candles">
+          <span style="--tip:36.07%;--blue:48.58%;--cyan:58.04%;--white:66.46%;--warm:69.50%"></span>
+          <span style="--tip:34.88%;--blue:45.73%;--cyan:54.84%;--white:64.19%;--warm:68.62%"></span>
+          <span style="--tip:35.16%;--blue:46.09%;--cyan:55.52%;--white:64.25%;--warm:68.52%"></span>
+          <span style="--tip:39.80%;--blue:49.24%;--cyan:56.40%;--white:64.96%;--warm:69.50%"></span>
+          <span style="--tip:41.35%;--blue:48.22%;--cyan:54.26%;--white:63.54%;--warm:68.16%"></span>
+          <span style="--tip:40.75%;--blue:48.00%;--cyan:54.80%;--white:63.32%;--warm:67.85%"></span>
+          <span style="--tip:43.12%;--blue:49.09%;--cyan:54.57%;--white:63.82%;--warm:67.40%"></span>
+          <span style="--tip:42.52%;--blue:48.55%;--cyan:54.23%;--white:62.34%;--warm:67.92%"></span>
+          <span style="--tip:42.86%;--blue:47.82%;--cyan:51.50%;--white:60.27%;--warm:65.85%"></span>
+          <span style="--tip:42.28%;--blue:47.33%;--cyan:52.36%;--white:61.62%;--warm:66.41%"></span>
+          <span style="--tip:44.65%;--blue:49.35%;--cyan:53.74%;--white:62.19%;--warm:65.98%"></span>
+          <span style="--tip:45.22%;--blue:50.07%;--cyan:53.86%;--white:62.07%;--warm:66.81%"></span>
+          <span style="--tip:41.98%;--blue:48.15%;--cyan:53.67%;--white:62.68%;--warm:67.64%"></span>
+          <span style="--tip:44.70%;--blue:49.51%;--cyan:53.34%;--white:61.29%;--warm:66.55%"></span>
+          <span style="--tip:45.17%;--blue:49.63%;--cyan:53.81%;--white:62.65%;--warm:67.25%"></span>
+          <span style="--tip:41.28%;--blue:47.84%;--cyan:54.50%;--white:62.65%;--warm:68.40%"></span>
+          <span style="--tip:42.97%;--blue:49.56%;--cyan:54.71%;--white:63.52%;--warm:69.47%"></span>
+          <span style="--tip:42.95%;--blue:49.91%;--cyan:55.28%;--white:64.14%;--warm:68.54%"></span>
+          <span style="--tip:40.45%;--blue:47.93%;--cyan:55.31%;--white:64.81%;--warm:69.50%"></span>
+          <span style="--tip:41.07%;--blue:48.16%;--cyan:55.38%;--white:66.14%;--warm:69.50%"></span>
+          <span style="--tip:37.29%;--blue:48.09%;--cyan:55.98%;--white:66.47%;--warm:69.50%"></span>
+          <span style="--tip:37.49%;--blue:47.18%;--cyan:55.84%;--white:66.93%;--warm:69.50%"></span>
+          <span style="--tip:38.55%;--blue:46.08%;--cyan:53.36%;--white:65.71%;--warm:69.50%"></span>
+          <span style="--tip:40.26%;--blue:46.38%;--cyan:52.28%;--white:64.91%;--warm:68.64%"></span>
+          <span style="--tip:38.26%;--blue:46.09%;--cyan:52.47%;--white:65.66%;--warm:69.50%"></span>
+          <span style="--tip:38.24%;--blue:45.64%;--cyan:51.38%;--white:64.75%;--warm:69.50%"></span>
+          <span style="--tip:35.38%;--blue:44.03%;--cyan:51.64%;--white:64.63%;--warm:69.11%"></span>
+          <span style="--tip:37.16%;--blue:44.54%;--cyan:52.05%;--white:65.56%;--warm:69.50%"></span>
+          <span style="--tip:32.71%;--blue:41.62%;--cyan:49.85%;--white:63.66%;--warm:68.37%"></span>
+          <span style="--tip:35.03%;--blue:45.41%;--cyan:52.74%;--white:65.42%;--warm:69.50%"></span>
+          <span style="--tip:32.20%;--blue:43.22%;--cyan:51.13%;--white:64.98%;--warm:69.50%"></span>
+          <span style="--tip:32.94%;--blue:42.01%;--cyan:51.07%;--white:63.19%;--warm:66.98%"></span>
+          <span style="--tip:32.63%;--blue:42.20%;--cyan:49.59%;--white:62.90%;--warm:66.22%"></span>
+          <span style="--tip:33.24%;--blue:41.68%;--cyan:49.84%;--white:62.38%;--warm:67.31%"></span>
+          <span style="--tip:34.33%;--blue:43.71%;--cyan:50.27%;--white:62.64%;--warm:67.25%"></span>
+          <span style="--tip:35.20%;--blue:42.30%;--cyan:48.70%;--white:60.88%;--warm:65.52%"></span>
+          <span style="--tip:36.07%;--blue:44.61%;--cyan:51.44%;--white:62.55%;--warm:65.71%"></span>
+          <span style="--tip:36.85%;--blue:43.95%;--cyan:51.08%;--white:63.34%;--warm:66.97%"></span>
+          <span style="--tip:39.45%;--blue:45.82%;--cyan:52.41%;--white:62.99%;--warm:68.58%"></span>
+          <span style="--tip:36.83%;--blue:45.08%;--cyan:52.96%;--white:64.25%;--warm:69.44%"></span>
+          <span style="--tip:34.35%;--blue:44.50%;--cyan:53.28%;--white:62.55%;--warm:68.36%"></span>
+          <span style="--tip:39.13%;--blue:47.45%;--cyan:53.45%;--white:63.91%;--warm:69.24%"></span>
+          <span style="--tip:39.11%;--blue:47.85%;--cyan:55.11%;--white:65.00%;--warm:68.16%"></span>
+          <span style="--tip:35.18%;--blue:46.37%;--cyan:54.31%;--white:63.98%;--warm:67.32%"></span>
+          <span style="--tip:39.35%;--blue:47.50%;--cyan:54.84%;--white:64.55%;--warm:68.97%"></span>
+          <span style="--tip:34.56%;--blue:45.62%;--cyan:55.25%;--white:65.35%;--warm:69.42%"></span>
+          <span style="--tip:36.87%;--blue:44.64%;--cyan:52.14%;--white:63.26%;--warm:68.36%"></span>
+          <span style="--tip:36.80%;--blue:46.45%;--cyan:53.92%;--white:64.49%;--warm:68.74%"></span>
+          <span style="--tip:36.22%;--blue:44.78%;--cyan:52.79%;--white:64.96%;--warm:69.50%"></span>
+          <span style="--tip:34.25%;--blue:43.81%;--cyan:53.20%;--white:65.14%;--warm:68.29%"></span>
+          <span style="--tip:36.48%;--blue:43.53%;--cyan:49.95%;--white:62.81%;--warm:68.35%"></span>
+          <span style="--tip:31.70%;--blue:41.02%;--cyan:49.63%;--white:62.58%;--warm:68.27%"></span>
+          <span style="--tip:33.05%;--blue:43.44%;--cyan:52.30%;--white:65.29%;--warm:69.13%"></span>
+          <span style="--tip:36.04%;--blue:44.25%;--cyan:50.75%;--white:64.12%;--warm:68.47%"></span>
+          <span style="--tip:35.69%;--blue:44.56%;--cyan:51.37%;--white:64.35%;--warm:68.26%"></span>
+          <span style="--tip:32.46%;--blue:43.04%;--cyan:51.00%;--white:63.17%;--warm:69.14%"></span>
+          <span style="--tip:34.54%;--blue:43.59%;--cyan:51.49%;--white:63.28%;--warm:66.55%"></span>
+          <span style="--tip:32.29%;--blue:42.58%;--cyan:50.43%;--white:61.70%;--warm:64.80%"></span>
+          <span style="--tip:35.30%;--blue:44.63%;--cyan:53.07%;--white:64.12%;--warm:69.50%"></span>
+          <span style="--tip:33.34%;--blue:42.93%;--cyan:50.39%;--white:61.50%;--warm:65.89%"></span>
+          <span style="--tip:28.74%;--blue:39.92%;--cyan:50.98%;--white:61.90%;--warm:66.68%"></span>
+          <span style="--tip:34.22%;--blue:43.87%;--cyan:52.06%;--white:62.78%;--warm:66.76%"></span>
+          <span style="--tip:33.68%;--blue:43.09%;--cyan:50.77%;--white:61.97%;--warm:65.62%"></span>
+          <span style="--tip:33.21%;--blue:41.82%;--cyan:49.88%;--white:61.67%;--warm:66.01%"></span>
+          <span style="--tip:28.45%;--blue:39.86%;--cyan:49.29%;--white:61.67%;--warm:66.45%"></span>
+          <span style="--tip:31.14%;--blue:39.80%;--cyan:47.98%;--white:59.72%;--warm:65.67%"></span>
+          <span style="--tip:26.30%;--blue:37.90%;--cyan:46.68%;--white:58.07%;--warm:64.00%"></span>
+          <span style="--tip:30.58%;--blue:38.55%;--cyan:44.46%;--white:57.84%;--warm:63.39%"></span>
+          <span style="--tip:26.09%;--blue:36.03%;--cyan:45.57%;--white:58.21%;--warm:62.34%"></span>
+          <span style="--tip:29.66%;--blue:37.33%;--cyan:43.67%;--white:56.41%;--warm:60.62%"></span>
+          <span style="--tip:29.31%;--blue:36.44%;--cyan:42.43%;--white:56.38%;--warm:60.82%"></span>
+          <span style="--tip:29.80%;--blue:35.32%;--cyan:41.05%;--white:54.63%;--warm:58.80%"></span>
+          <span style="--tip:30.11%;--blue:36.72%;--cyan:41.48%;--white:54.27%;--warm:59.62%"></span>
+          <span style="--tip:27.78%;--blue:34.71%;--cyan:40.56%;--white:53.35%;--warm:56.94%"></span>
+          <span style="--tip:24.88%;--blue:32.67%;--cyan:39.75%;--white:53.07%;--warm:58.45%"></span>
+          <span style="--tip:25.06%;--blue:32.08%;--cyan:38.07%;--white:52.23%;--warm:57.42%"></span>
+          <span style="--tip:25.56%;--blue:32.16%;--cyan:36.80%;--white:50.55%;--warm:55.00%"></span>
+          <span style="--tip:28.14%;--blue:32.72%;--cyan:36.78%;--white:50.74%;--warm:56.36%"></span>
+          <span style="--tip:28.54%;--blue:33.51%;--cyan:37.18%;--white:50.69%;--warm:55.64%"></span>
+          <span style="--tip:27.35%;--blue:31.60%;--cyan:35.99%;--white:49.68%;--warm:55.53%"></span>
+          <span style="--tip:26.38%;--blue:30.97%;--cyan:35.62%;--white:49.89%;--warm:54.40%"></span>
+          <span style="--tip:26.06%;--blue:30.48%;--cyan:34.70%;--white:48.98%;--warm:53.45%"></span>
+          <span style="--tip:28.33%;--blue:33.33%;--cyan:36.97%;--white:50.42%;--warm:54.59%"></span>
+          <span style="--tip:27.18%;--blue:32.06%;--cyan:35.82%;--white:49.85%;--warm:54.86%"></span>
+          <span style="--tip:27.28%;--blue:31.84%;--cyan:35.92%;--white:50.55%;--warm:56.68%"></span>
+          <span style="--tip:25.20%;--blue:29.55%;--cyan:33.84%;--white:47.83%;--warm:53.02%"></span>
+          <span style="--tip:25.38%;--blue:30.88%;--cyan:35.58%;--white:49.80%;--warm:53.45%"></span>
+          <span style="--tip:24.00%;--blue:30.63%;--cyan:36.00%;--white:49.44%;--warm:53.19%"></span>
+          <span style="--tip:25.52%;--blue:30.84%;--cyan:35.50%;--white:50.35%;--warm:56.07%"></span>
+          <span style="--tip:22.47%;--blue:30.59%;--cyan:37.01%;--white:50.63%;--warm:56.45%"></span>
+          <span style="--tip:23.37%;--blue:30.62%;--cyan:36.55%;--white:50.13%;--warm:54.80%"></span>
+          <span style="--tip:22.65%;--blue:29.19%;--cyan:33.88%;--white:48.11%;--warm:54.32%"></span>
+          <span style="--tip:22.56%;--blue:29.28%;--cyan:35.62%;--white:50.23%;--warm:54.30%"></span>
+          <span style="--tip:25.31%;--blue:30.79%;--cyan:35.18%;--white:48.65%;--warm:52.50%"></span>
+          <span style="--tip:23.19%;--blue:30.83%;--cyan:36.17%;--white:49.53%;--warm:53.92%"></span>
+          <span style="--tip:24.19%;--blue:30.65%;--cyan:36.11%;--white:48.73%;--warm:54.56%"></span>
+          <span style="--tip:25.99%;--blue:30.82%;--cyan:34.67%;--white:48.38%;--warm:52.46%"></span>
+          <span style="--tip:27.27%;--blue:32.22%;--cyan:36.71%;--white:49.84%;--warm:54.74%"></span>
+          <span style="--tip:25.81%;--blue:31.10%;--cyan:35.35%;--white:48.03%;--warm:51.88%"></span>
+          <span style="--tip:26.90%;--blue:32.54%;--cyan:36.69%;--white:48.68%;--warm:53.30%"></span>
+          <span style="--tip:21.69%;--blue:31.36%;--cyan:38.98%;--white:50.63%;--warm:54.23%"></span>
+          <span style="--tip:20.69%;--blue:29.84%;--cyan:39.12%;--white:49.84%;--warm:54.33%"></span>
+          <span style="--tip:18.84%;--blue:30.91%;--cyan:39.41%;--white:49.22%;--warm:52.89%"></span>
+          <span style="--tip:22.23%;--blue:32.71%;--cyan:40.06%;--white:49.29%;--warm:52.71%"></span>
+          <span style="--tip:20.65%;--blue:31.81%;--cyan:41.01%;--white:50.70%;--warm:55.67%"></span>
+          <span style="--tip:19.84%;--blue:30.94%;--cyan:42.45%;--white:51.50%;--warm:55.77%"></span>
+          <span style="--tip:24.41%;--blue:32.71%;--cyan:40.77%;--white:49.75%;--warm:56.01%"></span>
+          <span style="--tip:27.52%;--blue:36.83%;--cyan:43.31%;--white:51.85%;--warm:55.68%"></span>
+          <span style="--tip:25.09%;--blue:34.86%;--cyan:42.08%;--white:50.59%;--warm:54.86%"></span>
+          <span style="--tip:24.28%;--blue:33.24%;--cyan:41.94%;--white:50.96%;--warm:55.84%"></span>
+          <span style="--tip:29.33%;--blue:37.75%;--cyan:45.14%;--white:53.38%;--warm:57.99%"></span>
+          <span style="--tip:24.05%;--blue:35.87%;--cyan:46.08%;--white:54.57%;--warm:58.24%"></span>
+          <span style="--tip:28.97%;--blue:38.82%;--cyan:46.89%;--white:55.22%;--warm:59.08%"></span>
+          <span style="--tip:29.53%;--blue:39.10%;--cyan:46.92%;--white:55.76%;--warm:60.09%"></span>
+          <span style="--tip:27.11%;--blue:36.63%;--cyan:45.09%;--white:54.45%;--warm:59.22%"></span>
+          <span style="--tip:24.42%;--blue:37.87%;--cyan:47.82%;--white:57.21%;--warm:63.40%"></span>
+          <span style="--tip:24.52%;--blue:37.25%;--cyan:46.13%;--white:55.36%;--warm:59.90%"></span>
+          <span style="--tip:29.57%;--blue:39.85%;--cyan:48.37%;--white:57.63%;--warm:62.36%"></span>
+          <span style="--tip:30.73%;--blue:40.95%;--cyan:48.51%;--white:58.02%;--warm:63.45%"></span>
+          <span style="--tip:26.21%;--blue:39.56%;--cyan:49.18%;--white:58.94%;--warm:63.45%"></span>
+          <span style="--tip:29.70%;--blue:39.60%;--cyan:48.67%;--white:57.52%;--warm:62.67%"></span>
+          <span style="--tip:26.40%;--blue:37.75%;--cyan:48.49%;--white:58.42%;--warm:62.12%"></span>
+          <span style="--tip:30.56%;--blue:40.97%;--cyan:49.54%;--white:59.95%;--warm:64.20%"></span>
+          <span style="--tip:33.26%;--blue:42.58%;--cyan:51.10%;--white:60.93%;--warm:65.38%"></span>
+          <span style="--tip:30.06%;--blue:40.32%;--cyan:50.27%;--white:60.85%;--warm:65.33%"></span>
+          <span style="--tip:33.53%;--blue:43.21%;--cyan:51.31%;--white:61.65%;--warm:66.84%"></span>
+          <span style="--tip:32.78%;--blue:41.21%;--cyan:49.15%;--white:59.53%;--warm:64.29%"></span>
+          <span style="--tip:35.59%;--blue:45.56%;--cyan:52.55%;--white:62.40%;--warm:65.58%"></span>
+          <span style="--tip:35.39%;--blue:42.94%;--cyan:50.28%;--white:60.12%;--warm:63.78%"></span>
+          <span style="--tip:34.52%;--blue:43.17%;--cyan:50.91%;--white:61.83%;--warm:67.17%"></span>
+          <span style="--tip:34.79%;--blue:44.02%;--cyan:50.99%;--white:61.33%;--warm:65.40%"></span>
+          <span style="--tip:33.95%;--blue:43.49%;--cyan:50.29%;--white:61.03%;--warm:65.73%"></span>
+          <span style="--tip:36.21%;--blue:44.15%;--cyan:50.57%;--white:61.57%;--warm:66.56%"></span>
+          <span style="--tip:37.69%;--blue:44.29%;--cyan:50.86%;--white:60.92%;--warm:65.70%"></span>
+          <span style="--tip:38.89%;--blue:46.14%;--cyan:53.39%;--white:62.52%;--warm:65.90%"></span>
+          <span style="--tip:38.97%;--blue:47.45%;--cyan:55.91%;--white:64.12%;--warm:67.31%"></span>
+          <span style="--tip:38.91%;--blue:47.99%;--cyan:55.95%;--white:64.53%;--warm:69.15%"></span>
+          <span style="--tip:34.99%;--blue:46.44%;--cyan:55.84%;--white:64.36%;--warm:68.49%"></span>
+          <span style="--tip:38.66%;--blue:48.61%;--cyan:56.25%;--white:65.17%;--warm:69.50%"></span>
+          <span style="--tip:37.49%;--blue:46.06%;--cyan:54.53%;--white:64.55%;--warm:69.50%"></span>
+          <span style="--tip:39.23%;--blue:47.20%;--cyan:54.84%;--white:65.03%;--warm:69.50%"></span>
+          <span style="--tip:36.04%;--blue:46.26%;--cyan:54.56%;--white:65.08%;--warm:68.57%"></span>
+          <span style="--tip:39.65%;--blue:47.85%;--cyan:56.18%;--white:65.60%;--warm:69.50%"></span>
+          <span style="--tip:40.13%;--blue:47.97%;--cyan:54.31%;--white:64.96%;--warm:69.42%"></span>
+          <span style="--tip:39.57%;--blue:47.54%;--cyan:54.70%;--white:66.01%;--warm:69.50%"></span>
+          <span style="--tip:34.36%;--blue:44.17%;--cyan:52.48%;--white:63.48%;--warm:67.20%"></span>
+          <span style="--tip:34.60%;--blue:44.36%;--cyan:53.22%;--white:64.20%;--warm:69.50%"></span>
+          <span style="--tip:37.02%;--blue:44.42%;--cyan:50.00%;--white:61.56%;--warm:65.95%"></span>
+          <span style="--tip:37.90%;--blue:43.95%;--cyan:50.03%;--white:62.78%;--warm:68.41%"></span>
+          <span style="--tip:38.92%;--blue:44.11%;--cyan:49.47%;--white:62.26%;--warm:66.96%"></span>
+          <span style="--tip:37.55%;--blue:42.46%;--cyan:47.50%;--white:59.87%;--warm:64.60%"></span>
+          <span style="--tip:35.36%;--blue:42.61%;--cyan:47.97%;--white:60.25%;--warm:65.23%"></span>
+          <span style="--tip:32.98%;--blue:40.16%;--cyan:47.09%;--white:60.25%;--warm:65.17%"></span>
+          <span style="--tip:35.28%;--blue:42.11%;--cyan:49.01%;--white:61.99%;--warm:67.35%"></span>
+          <span style="--tip:38.67%;--blue:43.54%;--cyan:48.29%;--white:60.80%;--warm:65.70%"></span>
+          <span style="--tip:34.75%;--blue:43.44%;--cyan:50.21%;--white:61.50%;--warm:66.28%"></span>
+          <span style="--tip:36.62%;--blue:44.19%;--cyan:51.87%;--white:62.84%;--warm:66.53%"></span>
+          <span style="--tip:38.56%;--blue:45.16%;--cyan:51.20%;--white:62.90%;--warm:66.14%"></span>
+          <span style="--tip:39.46%;--blue:46.23%;--cyan:52.63%;--white:63.94%;--warm:69.21%"></span>
+          <span style="--tip:36.52%;--blue:44.85%;--cyan:53.06%;--white:64.87%;--warm:69.50%"></span>
+          <span style="--tip:34.48%;--blue:44.21%;--cyan:52.76%;--white:64.29%;--warm:67.55%"></span>
+          <span style="--tip:33.62%;--blue:44.67%;--cyan:55.08%;--white:66.65%;--warm:69.50%"></span>
+          <span style="--tip:36.41%;--blue:45.93%;--cyan:54.00%;--white:65.60%;--warm:68.75%"></span>
+          <span style="--tip:37.24%;--blue:46.96%;--cyan:54.37%;--white:65.10%;--warm:68.88%"></span>
+          <span style="--tip:36.61%;--blue:45.74%;--cyan:53.61%;--white:64.19%;--warm:68.68%"></span>
+          <span style="--tip:34.24%;--blue:46.97%;--cyan:56.53%;--white:66.51%;--warm:69.50%"></span>
+          <span style="--tip:34.47%;--blue:46.90%;--cyan:56.89%;--white:66.61%;--warm:69.50%"></span>
+          <span style="--tip:35.50%;--blue:47.46%;--cyan:56.82%;--white:66.62%;--warm:69.50%"></span>
+          <span style="--tip:39.52%;--blue:48.38%;--cyan:55.49%;--white:65.15%;--warm:69.50%"></span>
+          <span style="--tip:40.78%;--blue:49.12%;--cyan:57.06%;--white:66.28%;--warm:69.50%"></span>
+          <span style="--tip:41.84%;--blue:50.16%;--cyan:57.17%;--white:66.09%;--warm:69.50%"></span>
+          <span style="--tip:39.66%;--blue:50.22%;--cyan:58.55%;--white:67.02%;--warm:69.50%"></span>
+          <span style="--tip:36.29%;--blue:46.66%;--cyan:56.04%;--white:65.60%;--warm:69.50%"></span>
+          <span style="--tip:35.00%;--blue:47.37%;--cyan:57.55%;--white:65.88%;--warm:69.50%"></span>
+          <span style="--tip:39.80%;--blue:50.30%;--cyan:58.30%;--white:66.55%;--warm:69.50%"></span>
+          <span style="--tip:37.54%;--blue:48.29%;--cyan:58.70%;--white:67.55%;--warm:69.50%"></span>
+          <span style="--tip:35.35%;--blue:46.40%;--cyan:56.56%;--white:65.10%;--warm:69.50%"></span>
+          <span style="--tip:34.67%;--blue:45.77%;--cyan:57.07%;--white:66.12%;--warm:69.50%"></span>
+          <span style="--tip:31.35%;--blue:43.19%;--cyan:53.64%;--white:64.65%;--warm:69.47%"></span>
+          <span style="--tip:31.23%;--blue:42.79%;--cyan:54.26%;--white:65.33%;--warm:69.07%"></span>
+          <span style="--tip:33.07%;--blue:44.74%;--cyan:54.40%;--white:66.87%;--warm:69.50%"></span>
+          <span style="--tip:32.88%;--blue:42.94%;--cyan:52.00%;--white:65.17%;--warm:68.75%"></span>
+          <span style="--tip:34.72%;--blue:44.51%;--cyan:52.34%;--white:65.55%;--warm:69.50%"></span>
+          <span style="--tip:35.13%;--blue:44.17%;--cyan:52.35%;--white:66.70%;--warm:69.50%"></span>
+          <span style="--tip:35.83%;--blue:44.42%;--cyan:51.58%;--white:64.18%;--warm:69.26%"></span>
+          <span style="--tip:34.38%;--blue:43.19%;--cyan:52.03%;--white:64.82%;--warm:69.50%"></span>
+          <span style="--tip:37.09%;--blue:45.55%;--cyan:52.54%;--white:65.80%;--warm:69.50%"></span>
+          <span style="--tip:38.08%;--blue:46.52%;--cyan:52.45%;--white:65.66%;--warm:69.50%"></span>
+          <span style="--tip:38.92%;--blue:45.67%;--cyan:51.71%;--white:63.84%;--warm:67.70%"></span>
+          <span style="--tip:38.50%;--blue:46.38%;--cyan:52.42%;--white:64.95%;--warm:69.50%"></span>
+          <span style="--tip:38.80%;--blue:46.14%;--cyan:51.53%;--white:63.28%;--warm:67.52%"></span>
+          <span style="--tip:37.46%;--blue:44.59%;--cyan:51.51%;--white:62.44%;--warm:67.42%"></span>
+        </div>
+        <div class="spectrum-stars">
+          <i style="--x:14.57%;--y:54.22%;--size:1.79px;--alpha:0.19"></i>
+          <i style="--x:81.07%;--y:24.13%;--size:1.05px;--alpha:0.35"></i>
+          <i style="--x:40.88%;--y:19.89%;--size:1.06px;--alpha:0.22"></i>
+          <i style="--x:15.14%;--y:46.43%;--size:1.77px;--alpha:0.28"></i>
+          <i style="--x:21.34%;--y:87.08%;--size:1.74px;--alpha:0.30"></i>
+          <i style="--x:15.84%;--y:20.14%;--size:1.41px;--alpha:0.21"></i>
+          <i style="--x:4.06%;--y:14.88%;--size:1.79px;--alpha:0.16"></i>
+          <i style="--x:95.17%;--y:70.78%;--size:1.61px;--alpha:0.31"></i>
+          <i style="--x:8.99%;--y:43.75%;--size:1.80px;--alpha:0.20"></i>
+          <i style="--x:27.45%;--y:79.25%;--size:1.75px;--alpha:0.20"></i>
+          <i style="--x:32.05%;--y:12.95%;--size:1.71px;--alpha:0.20"></i>
+          <i style="--x:77.41%;--y:75.78%;--size:1.52px;--alpha:0.30"></i>
+          <i style="--x:5.00%;--y:61.09%;--size:1.75px;--alpha:0.34"></i>
+          <i style="--x:83.06%;--y:68.56%;--size:1.11px;--alpha:0.30"></i>
+          <i style="--x:96.91%;--y:29.49%;--size:1.30px;--alpha:0.30"></i>
+          <i style="--x:44.74%;--y:16.19%;--size:1.65px;--alpha:0.25"></i>
+          <i style="--x:11.73%;--y:50.45%;--size:0.91px;--alpha:0.32"></i>
+          <i style="--x:92.71%;--y:79.87%;--size:1.22px;--alpha:0.25"></i>
+          <i style="--x:81.20%;--y:80.12%;--size:0.99px;--alpha:0.32"></i>
+          <i style="--x:64.35%;--y:79.63%;--size:0.94px;--alpha:0.32"></i>
+          <i style="--x:14.55%;--y:36.52%;--size:1.68px;--alpha:0.25"></i>
+          <i style="--x:6.73%;--y:79.51%;--size:1.71px;--alpha:0.34"></i>
+          <i style="--x:57.91%;--y:31.74%;--size:1.20px;--alpha:0.23"></i>
+          <i style="--x:38.26%;--y:86.49%;--size:1.12px;--alpha:0.34"></i>
+          <i style="--x:81.62%;--y:12.72%;--size:0.95px;--alpha:0.27"></i>
+          <i style="--x:77.29%;--y:13.02%;--size:1.77px;--alpha:0.28"></i>
+          <i style="--x:90.39%;--y:47.97%;--size:1.43px;--alpha:0.17"></i>
+          <i style="--x:87.68%;--y:80.13%;--size:1.01px;--alpha:0.18"></i>
+          <i style="--x:79.20%;--y:19.20%;--size:1.43px;--alpha:0.30"></i>
+          <i style="--x:85.79%;--y:72.89%;--size:1.72px;--alpha:0.35"></i>
+          <i style="--x:83.91%;--y:43.60%;--size:1.08px;--alpha:0.25"></i>
+          <i style="--x:70.43%;--y:17.72%;--size:1.13px;--alpha:0.22"></i>
+          <i style="--x:74.10%;--y:29.86%;--size:1.72px;--alpha:0.20"></i>
+          <i style="--x:78.63%;--y:79.70%;--size:1.69px;--alpha:0.32"></i>
+          <i style="--x:82.61%;--y:46.32%;--size:1.42px;--alpha:0.33"></i>
+          <i style="--x:76.02%;--y:73.15%;--size:1.63px;--alpha:0.22"></i>
+          <i style="--x:86.03%;--y:30.74%;--size:0.97px;--alpha:0.31"></i>
+          <i style="--x:93.04%;--y:7.66%;--size:1.12px;--alpha:0.25"></i>
+          <i style="--x:75.38%;--y:70.84%;--size:1.12px;--alpha:0.22"></i>
+          <i style="--x:69.15%;--y:82.95%;--size:1.73px;--alpha:0.21"></i>
+          <i style="--x:84.58%;--y:67.44%;--size:1.09px;--alpha:0.28"></i>
+          <i style="--x:86.71%;--y:32.34%;--size:0.90px;--alpha:0.20"></i>
+          <i style="--x:90.41%;--y:35.40%;--size:1.30px;--alpha:0.21"></i>
+          <i style="--x:95.87%;--y:24.35%;--size:1.39px;--alpha:0.24"></i>
+          <i style="--x:73.84%;--y:76.36%;--size:1.70px;--alpha:0.18"></i>
+          <i style="--x:68.59%;--y:62.36%;--size:1.05px;--alpha:0.17"></i>
+          <i style="--x:79.51%;--y:30.56%;--size:1.12px;--alpha:0.31"></i>
+          <i style="--x:87.93%;--y:9.10%;--size:1.02px;--alpha:0.25"></i>
+          <i style="--x:81.66%;--y:64.07%;--size:1.78px;--alpha:0.17"></i>
+          <i style="--x:92.39%;--y:16.50%;--size:1.59px;--alpha:0.26"></i>
+          <i style="--x:86.84%;--y:7.43%;--size:1.01px;--alpha:0.25"></i>
+          <i style="--x:90.75%;--y:11.01%;--size:1.08px;--alpha:0.31"></i>
+          <i style="--x:85.57%;--y:13.18%;--size:1.06px;--alpha:0.27"></i>
+          <i style="--x:89.20%;--y:33.96%;--size:1.41px;--alpha:0.19"></i>
+          <i style="--x:96.91%;--y:75.60%;--size:1.63px;--alpha:0.35"></i>
+          <i style="--x:78.19%;--y:50.08%;--size:1.51px;--alpha:0.23"></i>
+          <i style="--x:83.01%;--y:89.85%;--size:1.58px;--alpha:0.28"></i>
+          <i style="--x:84.16%;--y:76.50%;--size:1.27px;--alpha:0.19"></i>
+          <i style="--x:69.61%;--y:73.46%;--size:1.72px;--alpha:0.27"></i>
+          <i style="--x:76.89%;--y:68.80%;--size:1.12px;--alpha:0.26"></i>
+          <i style="--x:89.17%;--y:26.84%;--size:1.26px;--alpha:0.19"></i>
+          <i style="--x:92.38%;--y:23.08%;--size:1.74px;--alpha:0.22"></i>
+        </div>
+      </div>
+      <div class="hero-copy">
+        <h1 id="hero-title">あなたの編集を、<span class="nb">次の一本にも</span></h1>
+        <p class="hero-sub">作りたい動画を伝えるだけ<br>あなたのスタイルで、AI が仕上げます</p>
+        <div class="actions">
+          <a class="button primary" href="download.html">無料で試す</a>
+          <a class="button" href="#demo">デモを見る</a>
+        </div>
+      </div>
+      <figure class="demo" id="demo">
+        <div class="hero-media hero-video">
+          <video src="assets/hero-demo.mp4?v=3" poster="assets/hero-demo-poster.jpg?v=3" autoplay muted loop playsinline preload="metadata" aria-label="Motif の操作画面：素材を渡して依頼すると、AI がタイムラインに Vlog を組み上げ、囲って頼むとタイトルが直る様子"></video>
+        </div>
+      </figure>
+    </section>
+
+    <section class="feature-section" id="features" aria-labelledby="features-title">
+      <div class="feature-shell">
+        <div class="feature-heading">
+          <h2 id="features-title">頼むだけで、編集が完結する<span>あなたのスタイルのまま、カットから書き出しまで</span></h2>
+        </div>
+        <div class="feature-deck" aria-label="機能の紹介">
+          <article class="feature-card" tabindex="0" aria-labelledby="feature-style-title">
+            <div class="feature-media" data-demo="style">
+              <div class="dm dm-style2" data-step="0" data-sub="0" aria-hidden="true">
+                <div class="s1-icons">
+                  <span class="s1-ic s1-yt"><i><svg viewBox="0 0 56 56"><rect x="11" y="16" width="34" height="24" rx="7" fill="#ff0033"/><path d="M25 22.5v11l9.5-5.5z" fill="#fff"/></svg></i></span>
+                  <span class="s1-ic s1-ig"><i><svg viewBox="0 0 56 56"><rect x="15" y="15" width="26" height="26" rx="8" fill="none" stroke="#fff" stroke-width="3"/><circle cx="28" cy="28" r="6.2" fill="none" stroke="#fff" stroke-width="3"/><circle cx="35.6" cy="20.4" r="1.9" fill="#fff"/></svg></i></span>
+                  <span class="s1-ic s1-tt"><i><svg viewBox="0 0 56 56"><g transform="translate(16 15) scale(1.05)"><path d="M14 2h3.6c.3 2.6 2 4.4 4.6 4.7v3.6c-1.7 0-3.3-.5-4.6-1.4v7.6a6.6 6.6 0 1 1-6.6-6.6v3.7a2.9 2.9 0 1 0 3 2.9z" fill="#25f4ee" transform="translate(-1 -1)"/><path d="M14 2h3.6c.3 2.6 2 4.4 4.6 4.7v3.6c-1.7 0-3.3-.5-4.6-1.4v7.6a6.6 6.6 0 1 1-6.6-6.6v3.7a2.9 2.9 0 1 0 3 2.9z" fill="#fe2c55" transform="translate(1 1)"/><path d="M14 2h3.6c.3 2.6 2 4.4 4.6 4.7v3.6c-1.7 0-3.3-.5-4.6-1.4v7.6a6.6 6.6 0 1 1-6.6-6.6v3.7a2.9 2.9 0 1 0 3 2.9z" fill="#fff"/></g></svg></i></span>
+                </div>
+                <div class="s1-video">
+                  <div class="s1-thumb"><b class="f1"></b><b class="f2"></b><b class="f3"></b><time>12:48</time><span class="s1-prog"></span></div>
+                  <div class="s1-meta"><strong>カフェ店主の1日<br>仕込みから閉店まで</strong><span>youtube.com/watch?v=Qk7nJuYa</span></div>
+                </div>
+                <div class="s1-composer">
+                  <div class="s1-text"><span class="s1-ph">作りたい動画や、参考のリンクを入力</span><span class="d-typed" data-text="この動画のテンポとテロップで編集して"></span><span class="d-caret"></span></div>
+                  <div class="s1-link"><span>https://www.youtube.com/watch?v=Qk7nJuYaHc</span></div>
+                  <div class="s1-bar">
+                    <span class="s1-model"><svg viewBox="0 0 16 16"><path d="M2.5 5h7M12 5h1.5M2.5 11h2M7 11h6.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="10.5" cy="5" r="1.6" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="5.5" cy="11" r="1.6" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>Claude Opus 5.5<svg class="s1-chev" viewBox="0 0 16 16"><path d="M4.5 6.5 8 10l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    <span class="s1-mic"><svg viewBox="0 0 16 16"><rect x="5.6" y="1.8" width="4.8" height="8" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M3.3 7.6a4.7 4.7 0 0 0 9.4 0M8 12.3v2" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+                    <span class="s1-send"><svg viewBox="0 0 16 16"><path d="M8 12.5v-9M4.2 7.2 8 3.4l3.8 3.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  </div>
+                </div>
+                <div class="s1-status">
+                  <div class="s1-think"><span class="d-spin"></span><span class="s1-roll"><em>カットのテンポを分析中</em><em>テロップの書体と位置を分析中</em><em>BGM と効果音の使い方を分析中</em></span></div>
+                  <div class="s1-done"><span class="d-check"></span>分析完了</div>
+                </div>
+              </div>
+            </div>
+            <div class="feature-card-copy">
+              <h3 id="feature-style-title">スタイルを覚える</h3>
+              <p>参考の動画やチャンネルを渡すだけ<br>編集の手法やスタイルを学習し、覚えます</p>
+            </div>
+            <a class="feature-more" href="#how">スタイルについて <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="feature-card" tabindex="0" aria-labelledby="feature-cut-title">
+            <div class="feature-media" data-demo="cut">
+              <div class="dm dm-cut" data-step="0" aria-hidden="true">
+                <div class="d2-head"><span class="d2-tc">00:00:00:00</span><span class="d2-pill"><span class="d2-p1"><span class="d-spin"></span>カットを作成中</span><span class="d2-p2"><span class="d-check"></span>最初の一本ができました</span></span><span class="d2-fmt">1080p ・ 30fps</span></div>
+                <div class="d2-ruler"><span style="left:0">0:00</span><span style="left:25%">0:15</span><span style="left:50%">0:30</span><span style="left:75%">0:45</span></div>
+                <div class="d2-rows">
+                  <div class="d2-row"><label><i class="ic-t"></i>テロップ<span class="d2-tools"><svg viewBox="0 0 16 16"><path d="M3 6.2h2.4L8.6 3.6v8.8L5.4 9.8H3z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 16 16"><path d="M1.8 8s2.3-4 6.2-4 6.2 4 6.2 4-2.3 4-6.2 4-6.2-4-6.2-4z" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="8" cy="8" r="1.8" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></span></label><div class="d2-lane"><i class="k-cap" data-k style="left:3%;width:22%;--i:0">今日の仕込み</i><i class="k-cap" data-k style="left:31%;width:24%;--i:1">人気のメニュー</i><i class="k-cap" data-k style="left:62%;width:20%;--i:2">また明日</i></div></div>
+                  <div class="d2-row"><label><i class="ic-g"></i>グラフィック<span class="d2-tools"><svg viewBox="0 0 16 16"><path d="M3 6.2h2.4L8.6 3.6v8.8L5.4 9.8H3z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 16 16"><path d="M1.8 8s2.3-4 6.2-4 6.2 4 6.2 4-2.3 4-6.2 4-6.2-4-6.2-4z" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="8" cy="8" r="1.8" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></span></label><div class="d2-lane"><i class="k-gfx" style="left:0;width:14%;--i:0">タイトル</i><i class="k-gfx" style="left:47%;width:16%;--i:1">地図</i></div></div>
+                  <div class="d2-row tall"><label><i class="ic-v"></i>ビデオ<span class="d2-tools"><svg viewBox="0 0 16 16"><path d="M3 6.2h2.4L8.6 3.6v8.8L5.4 9.8H3z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 16 16"><path d="M1.8 8s2.3-4 6.2-4 6.2 4 6.2 4-2.3 4-6.2 4-6.2-4-6.2-4z" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="8" cy="8" r="1.8" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></span></label><div class="d2-lane"><i class="k-vid v1" style="left:0;width:29%;--i:0"><em>A001.MP4</em></i><i class="k-vid v2" style="left:29.6%;width:24%;--i:1"><em>A004.MP4</em></i><i class="k-vid v3" style="left:54.2%;width:31%;--i:2"><em>A007.MP4</em></i></div></div>
+                  <div class="d2-row"><label><i class="ic-a"></i>BGM<span class="d2-tools"><svg viewBox="0 0 16 16"><path d="M3 6.2h2.4L8.6 3.6v8.8L5.4 9.8H3z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 16 16"><path d="M1.8 8s2.3-4 6.2-4 6.2 4 6.2 4-2.3 4-6.2 4-6.2-4-6.2-4z" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="8" cy="8" r="1.8" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></span></label><div class="d2-lane"><i class="k-bgm" style="left:0;width:85%"><em>Morning Lo-fi.mp3</em></i></div></div>
+                  <span class="d2-playhead"></span>
+                </div>
+              </div>
+            </div>
+            <div class="feature-card-copy">
+              <h3 id="feature-cut-title">タイムラインに組み上がる</h3>
+              <p>素材を入れて、<span class="nb">作りたい動画を伝えるだけ</span><br>タイムライン上でAIが編集する</p>
+            </div>
+            <a class="feature-more" href="download.html">無料で試す <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="feature-card" tabindex="0" aria-labelledby="feature-revise-title">
+            <div class="feature-media" data-demo="revise">
+              <div class="dm dm-revise2" data-step="0" aria-hidden="true">
+                <div class="r3-frame">
+                  <div class="r3-photo"></div>
+                  <span class="r3-cap">今日の<em>仕込み</em>を紹介します</span>
+                  <span class="r3-shade"></span>
+                  <div class="r3-new"><span class="r3-kick">カフェの朝</span><span class="r3-big"><i style="--i:0">今</i><i style="--i:1">日</i><i style="--i:2">の</i><em><i style="--i:3">仕</i><i style="--i:4">込</i><i style="--i:5">み</i></em><i style="--i:6">を</i><i style="--i:7">紹</i><i style="--i:8">介</i><i style="--i:9">し</i><i style="--i:10">ま</i><i style="--i:11">す</i></span></div>
+                  <span class="r3-scan"></span>
+                  <span class="r3-box"></span>
+                  <span class="r3-glow"></span>
+                </div>
+                <div class="r3-pop">
+                  <div class="r3-head"><b>0:24 の画面の下に</b><i></i></div>
+                  <div class="r3-area"><span class="r3-ph">ここをどうしますか？（例: テロップを大きく）</span><span class="d-typed" data-text="このテロップを、もっと大きく目立たせて"></span><span class="d-caret"></span></div>
+                  <div class="r3-foot"><span class="r3-send"><b class="b1">送信</b><b class="b2"><span class="d-spin"></span>反映中</b></span></div>
+                </div>
+                <span class="d-cursor"></span>
+              </div>
+            </div>
+            <div class="feature-card-copy">
+              <h3 id="feature-revise-title">囲って、頼むだけ</h3>
+              <p>気になる部分を囲って、<span class="nb">修正を頼むだけ</span><br>直したところもAIが学習する</p>
+            </div>
+            <a class="feature-more" href="#how">できることを見る <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section band glass-section" id="how" aria-labelledby="how-title">
+      <div class="container glass-shell">
+        <div class="section-heading">
+          <h2 id="how-title">編集のすべてが、ひとつのアプリに。</h2>
+          <ol class="flow" aria-label="使い方">
+            <li>素材を入れる</li><li>何をつくるか書く</li><li>話しかけて直す</li><li>書き出す</li>
+          </ol>
+        </div>
+        <ul class="glass-grid" aria-label="Motif でできること">
+          <li class="glass-card"><h3>言い直しも自動でカット</h3><p>2つの音声認識モデルで、無音・言い直し・言いよどみを見つけて切ります。</p></li>
+          <li class="glass-card"><h3>日本語テロップ</h3><p>話した言葉をテロップに。強調や色もスタイルどおり。固有名詞は辞書で正しく。</p></li>
+          <li class="glass-card"><h3>モーショングラフィックス</h3><p>見出し・図解・リストを、話している内容に合わせて入れます。</p></li>
+          <li class="glass-card"><h3>BGM と効果音</h3><p>内蔵のライブラリから選び、間とタイミングを合わせます。</p></li>
+          <li class="glass-card"><h3>色の補正</h3><p>暗い・くすんだ映像も、自動補正や LUT で見やすく整えます。</p></li>
+          <li class="glass-card"><h3>人物の切り抜き</h3><p>人物の後ろに文字を置く演出も。切り抜きは Mac の中で行います。</p></li>
+          <li class="glass-card"><h3>写真と Web ページ</h3><p>話に出てきた場所やサービスの写真・画面を、ライセンスの処理ごと入れます。</p></li>
+          <li class="glass-card"><h3>手で直せるタイムライン</h3><p>AI の編集はすべてクリップとして残り、一つずつ手で調整できます。</p></li>
+        </ul>
+      </div>
+    </section>
+
+
+    <section class="section band" id="pricing" aria-labelledby="pricing-title">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="pricing-title">料金</h2>
+          <p>プランはひとつ。7日間は、すべての機能を無料でお使いいただけます。</p>
+        </div>
+        <div class="pricing-layout">
+          <article class="plan">
+            <p class="plan-name">プロプラン</p>
+            <h3>¥5,500 <small>/ 月（税込）</small></h3>
+            <p class="plan-trial">はじめの7日間は無料・カード登録不要</p>
+            <ul>
+              <li>チャットでの AI 編集が無制限</li>
+              <li>スタイルを何本でも作成</li>
+              <li>カット・テロップ・BGM・グラフィックを AI で</li>
+              <li>MP4 と XML で書き出し</li>
+            </ul>
+            <a class="button primary" href="download.html">無料ではじめる</a>
+            <p class="micro">いつでも解約できます　·　<a href="refund.html">返金ポリシー</a></p>
+          </article>
+          <div class="requirements">
+            <h3>ご利用の前に</h3>
+            <dl>
+              <div><dt>対応環境</dt><dd>Apple シリコン搭載の Mac（macOS 13 以降）</dd></div>
+              <div><dt>AI</dt><dd>お持ちの Claude または ChatGPT のアカウントで動きます。おすすめのモデルを使うには、各社の有料プランが必要です。</dd></div>
+              <div><dt>料金に含まれるもの</dt><dd>Motif のすべての機能。AI の利用料は、お使いの Claude・ChatGPT のプランに含まれます。</dd></div>
+              <div><dt>はじめ方</dt><dd>ダウンロードしてアカウントを作成すると、初回の案内に沿って数分で準備が整います。</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container faq-layout" id="faq" aria-labelledby="faq-title">
+      <div class="section-heading left">
+        <h2 id="faq-title">よくある質問</h2>
+        <p>そのほかのご質問は <a href="mailto:support@motif-ai.app">support@motif-ai.app</a> まで。</p>
+      </div>
+      <div class="faq-list">
+        <details><summary>どんな人に向いていますか？</summary><p>事業やチャンネルのために動画を出し続けたいのに、編集に時間を取られている方に向いています。話す動画（リール・ショート・YouTube の解説など）が得意です。</p></details>
+        <details><summary>編集の経験がなくても使えますか？</summary><p>はい。何をつくりたいかを日本語で書くだけで編集が進みます。細かい調整もチャットで頼めますし、タイムラインで手で直すこともできます。</p></details>
+        <details><summary>AI が編集したあと、自分で直せますか？</summary><p>はい。カット・テロップ・グラフィックはすべてタイムライン上のクリップとして残るので、一つずつ手で調整できます。</p></details>
+        <details><summary>Claude や ChatGPT のプランが必要なのはなぜですか？</summary><p>Motif の AI は、お持ちの Claude または ChatGPT のアカウントで動きます。そのため Motif の料金に AI の使用量の上限はなく、各社のプランの範囲内で無制限にお使いいただけます。</p></details>
+        <details><summary>動画はどこに保存されますか？</summary><p>素材とプロジェクトはお使いの Mac に保存され、Motif のサーバーにはアップロードされません。文字起こしも Mac の中で行います。編集の指示や確認に必要な文字と画像は、お使いの AI（Claude または ChatGPT）に送られます。</p></details>
+        <details><summary>Windows や iPhone で使えますか？</summary><p>現在は、Apple シリコン搭載の Mac（macOS 13 以降）でお使いいただけます。</p></details>
+        <details><summary>無料トライアルのあと、自動で課金されますか？</summary><p>されません。カードの登録は不要です。トライアルが終わると、チャット・AI の機能・新しいスタイルの作成が止まります。プロジェクトを開く・手で編集する・書き出すことは、そのまま続けられます。</p></details>
+        <details><summary>解約や返金はどうなりますか？</summary><p>Motif の 設定 › プラン からいつでも解約でき、お支払い済みの期間の終わりまでお使いいただけます。返金については<a href="refund.html">返金ポリシー</a>をご覧ください。</p></details>
+        <details><summary>Premiere Pro など、ほかのソフトに持っていけますか？</summary><p>はい。MP4 での書き出しのほか、Premiere Pro などで開ける XML 形式でタイムラインを書き出せます。</p></details>
+      </div>
+    </section>
+
+    <section class="closing band" id="get-started" aria-labelledby="closing-title">
+      <div class="container">
+        <h2 id="closing-title"><span class="nb">次の動画から、</span><span class="nb">編集はチャットで。</span></h2>
+        <p>7日間、すべての機能を無料で。<span class="nb">カードの登録は要りません。</span></p>
+        <a class="button primary" href="download.html">Mac 版をダウンロード</a>
+        <p class="micro">Apple シリコン搭載の Mac · macOS 13 以降</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <div><a class="wordmark" href="#"><img src="assets/motif-mark.svg" alt="" width="34" height="34">Motif</a><p class="micro">AI 動画編集アプリ</p></div>
+    <nav aria-label="製品"><span class="eyebrow">製品</span><a href="#features">Motifについて</a><a href="#how">使い方</a><a href="#pricing">料金プラン</a></nav>
+    <nav aria-label="サポート"><span class="eyebrow">サポート</span><a href="#faq">よくある質問</a><a href="mailto:support@motif-ai.app">お問い合わせ</a></nav>
+    <nav aria-label="規約"><span class="eyebrow">規約</span><a href="terms.html">利用規約</a><a href="privacy.html">プライバシーポリシー</a><a href="tokushoho.html">特定商取引法に基づく表記</a><a href="refund.html">返金ポリシー</a></nav>
+    <p class="footer-note">© 2026 Motif</p>
+  </footer>
 </body>
 </html>
