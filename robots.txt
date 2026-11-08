@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://motif-ai.app/sitemap.xml
