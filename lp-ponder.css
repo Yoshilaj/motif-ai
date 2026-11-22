@@ -1,0 +1,249 @@
+/* ==========================================================================
+   Layout + background pass (2026-11-22)
+   Loaded last. Takes the measured system of a reference LP (ponder.ai, read at 1920 px):
+   one 1240 px column, black page, near-white ink with a single 58 % muted tone,
+   34 px hero lines (second line muted), 26 px section heads, 16/15 px body,
+   128 px section rhythm, 60 px glass header, pill buttons 44 px high,
+   product frame 10 px radius with a deep soft shadow, and a dim blue cloud behind
+   the hero instead of the spectrum bars.
+   ========================================================================== */
+
+:root {
+  --page: #000;
+  --ink: #fafafa;
+  --ink-2: #f1f1f1;
+  --mute: rgba(250, 250, 250, .58);
+  --hair: rgba(255, 255, 255, .08);
+  --col: 1240px;
+  --gutter: 40px;
+}
+
+html, body { background: var(--page); }
+body { color: var(--ink); }
+
+/* one column everywhere */
+.container,
+.feature-shell,
+.nav.container { width: min(var(--col), calc(100% - 2 * var(--gutter))); margin-inline: auto; }
+
+/* ---- header: 60 px, black glass, hairline */
+.site-header {
+  position: sticky; top: 0; z-index: 20;
+  background: rgba(0, 0, 0, .55);
+  -webkit-backdrop-filter: blur(16px) saturate(140%); backdrop-filter: blur(16px) saturate(140%);
+  border-bottom: 1px solid var(--hair);
+}
+.nav, .nav.container { min-height: 60px; gap: 24px; }
+.nav .wordmark { gap: 8px; font-size: 16px; font-weight: 500; letter-spacing: -.01em; color: var(--ink-2); }
+.nav .wordmark img { width: 20px; height: 20px; }
+.nav nav { gap: 31px; }
+.nav nav a { min-height: 0; font-size: 13px; font-weight: 500; letter-spacing: .02em; color: var(--ink-2); opacity: .9; transition: opacity .15s; }
+.nav nav a:hover { color: var(--ink-2); opacity: 1; }
+.nav-download {
+  min-height: 32px; padding: 0 14px; border: 0; border-radius: 999px;
+  background: var(--ink-2); color: #020202; font-size: 13px; font-weight: 500; line-height: 1;
+}
+.nav-download:hover { background: #fff; }
+
+/* ---- hero background: Motif's colours (navy, blue, cyan, peach) as an irregular cloud.
+   A fractal-noise mask breaks the light into uneven patches; a vertical mask fades it in and out. */
+/* ---- hero background: a smoky haze in Motif's colours
+   (navy #03102c, blue #075c96, logo blue #2f5bf0, cyan #39aecb, peach #f39174). */
+.hero::before { display: none; }
+.hero-spectrum {
+  display: block; position: absolute; z-index: -1; pointer-events: none; overflow: hidden;
+  left: 50%; top: -61px; transform: translateX(-50%);
+  width: 100vw; height: 900px; opacity: 1; background: none; filter: none;
+  -webkit-mask-image: linear-gradient(180deg, transparent 4%, #000 26%, #000 62%, transparent 96%);
+  mask-image: linear-gradient(180deg, transparent 4%, #000 26%, #000 62%, transparent 96%);
+}
+.hero-spectrum > * { display: none; }
+
+/* colour haze: a smoky texture in Motif's colours (assets/hero-haze.jpg, made by design/hero-haze-generator.html) */
+.hero-spectrum::after {
+  content: ""; position: absolute; top: -26%; bottom: 14%; left: -4%; right: -4%; z-index: 0;
+  background:
+    radial-gradient(ellipse 24% 7% at 42% 57%, rgba(239, 145, 80, .22), transparent 72%),
+    radial-gradient(ellipse 9% 14% at 95% 63%, rgba(243, 145, 116, .24), transparent 72%),
+    radial-gradient(ellipse 7% 12% at 5% 66%, rgba(239, 145, 80, .14), transparent 72%),
+    url("assets/hero-haze.jpg") 60% 50% / cover no-repeat;
+  opacity: 1; filter: brightness(1.35) saturate(.9);
+  animation: hero-fade 24s ease-in-out infinite alternate;
+}
+@keyframes hero-fade {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(-2.5%, 1.5%, 0) scale(1.04); }
+}
+
+/* tiny dot matrix: dense where the haze is brightest, clearly fading out toward the text and the edges */
+.hero-spectrum::before {
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  background-image: radial-gradient(circle, rgba(225, 238, 255, .85) .6px, transparent 1px);
+  background-size: 14px 14px;
+  -webkit-mask-image: radial-gradient(ellipse 42% 48% at 72% 40%, #000 0%, rgba(0, 0, 0, .6) 28%, rgba(0, 0, 0, .12) 52%, transparent 70%);
+  mask-image: radial-gradient(ellipse 42% 48% at 72% 40%, #000 0%, rgba(0, 0, 0, .6) 28%, rgba(0, 0, 0, .12) 52%, transparent 70%);
+}
+@media (prefers-reduced-motion: reduce) { .hero-spectrum::after { animation: none; } }
+
+/* ---- hero type: two 34 px lines, the second muted; left-aligned on the column */
+.hero { padding-top: 112px; }
+.hero-copy { max-width: none; text-align: left; margin-inline: 0; }
+.hero-copy h1 {
+  margin: 0; font-size: 28px; font-weight: 600; line-height: 1.32; letter-spacing: .02em;
+  color: var(--ink); text-shadow: none; text-wrap: initial;
+}
+.hero-copy h1 span { color: inherit; }
+.hero-sub {
+  margin: 0; font-size: 28px; font-weight: 600; line-height: 1.32; letter-spacing: .02em;
+  color: var(--mute); text-shadow: none;
+}
+.hero .actions { justify-content: flex-start; gap: 8px; margin-top: 24px; }
+.hero .button {
+  min-height: 38px; padding: 0 18px; border: 0; border-radius: 999px;
+  font-size: 14px; font-weight: 500; line-height: 1; letter-spacing: .02em;
+  background: #252525; color: var(--ink); box-shadow: none;
+}
+.hero .button:hover { background: #303030; }
+.actions .button:not(.primary) { background: #252525; color: var(--ink); border: 0; }
+.actions .button:not(.primary):hover { background: #303030; }
+.hero .button.primary { background: var(--ink); color: #000; }
+.hero .button.primary:hover { background: #fff; }
+
+/* ---- product frame */
+.hero .demo { margin-top: 56px; }
+.demo::before { display: none; }
+.hero-media {
+  border: 0; border-radius: 10px; overflow: hidden; background: #0d0d0d;
+  box-shadow: 0 40px 120px -20px rgba(0, 0, 0, .7);
+}
+.hero-media video { border-radius: 10px; }
+
+/* ---- sections: black, 128 px rhythm, left-aligned 26 px heads */
+.feature-section, .section, .band, .glass-section, #pricing { background: transparent; border: 0; }
+.feature-section::before, .glass-section::before, #pricing::before { display: none; }
+.feature-section, .section { padding-block: 128px; }
+.feature-section { padding-top: 160px; }
+
+.feature-heading, .section-heading { text-align: left; margin-inline: 0; max-width: none; }
+.feature-heading h2,
+.section-heading h2,
+.glass-section .section-heading h2 {
+  margin-top: 0; font-family: inherit; font-size: 20px; font-weight: 600;
+  line-height: 1.3; letter-spacing: .01em; color: var(--ink);
+}
+.feature-heading h2 span { display: block; margin-top: 2px; color: var(--mute); font-size: 20px; font-weight: 600; }
+.section-heading { margin-bottom: 48px; }
+.section-heading > p:last-child,
+.glass-section .section-heading > p:last-child { margin-top: 8px; color: var(--mute); font-size: 14px; line-height: 1.7; }
+.feature-deck { margin-top: 48px; }
+
+/* cards: flat, near-black, hairline, 16/15 type */
+.feature-card { background: #0d0d0d; border-color: var(--hair); box-shadow: none; border-radius: 12px; }
+.feature-card::before { display: none; }
+.feature-card-copy h3, .glass-card h3, .requirements h3 { font-size: 14px; font-weight: 600; line-height: 1.4; letter-spacing: .01em; color: var(--ink); }
+.feature-card-copy p, .glass-card p { font-size: 13px; line-height: 1.7; color: var(--mute); }
+.feature-more { color: var(--ink-2); font-size: 13px; }
+
+.glass-card {
+  min-height: 0; padding: 24px; border: 1px solid var(--hair); border-radius: 12px;
+  background: #0d0d0d; -webkit-backdrop-filter: none; backdrop-filter: none; box-shadow: none;
+}
+.glass-card::before, .glass-card::after { display: none; }
+.glass-card:hover { transform: none; border-color: rgba(255, 255, 255, .16); box-shadow: none; }
+.glass-card p { margin-top: 8px; }
+.flow li { color: var(--mute); }
+
+/* pricing + faq on the same tones */
+.plan { background: #0d0d0d; border-color: var(--hair); border-radius: 12px; box-shadow: none; }
+.plan ul, dd, .faq-list p { color: var(--mute); }
+dt, .faq-list summary { color: var(--ink); }
+.faq-list details { border-color: var(--hair); }
+
+.pricing-layout { max-width: none; margin-inline: 0; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 64px; }
+.faq-layout .section-heading p { font-size: 14px; }
+.faq-list summary { font-size: 14px; }
+.faq-list p, .plan ul, dd { font-size: 13px; }
+
+/* closing: plain black, one muted line, same button language */
+.closing { background: transparent; padding-block: 160px; }
+.closing::before, .closing::after { display: none; }
+.closing h2 { font-size: 26px; font-weight: 600; line-height: 1.3; letter-spacing: .01em; }
+.closing p:not(.eyebrow) { color: var(--mute); font-size: 14px; }
+.closing .button { min-height: 38px; padding: 0 18px; border-radius: 999px; font-size: 14px; font-weight: 500; }
+.closing .micro { color: rgba(250, 250, 250, .4); font-size: 11px; }
+
+.footer { border-top: 1px solid var(--hair); }
+.footer nav a { color: var(--mute); font-size: 12px; }
+.footer nav a:hover { color: var(--ink); }
+.footer .eyebrow { color: var(--ink); font-size: 11px; }
+.footer-note { color: rgba(250, 250, 250, .4); font-size: 12px; }
+
+/* Japanese lines break between phrases, not mid-word */
+.hero-copy h1, .hero-sub, .feature-heading h2, .section-heading h2, .closing h2 { word-break: auto-phrase; }
+
+/* ---- narrow screens */
+@media (max-width: 760px) {
+  :root { --gutter: 20px; }
+  .nav, .nav.container { min-height: 0; }
+  .nav nav { gap: 14px; }
+  .nav nav a { font-size: 12px; }
+  .hero { padding-top: 56px; }
+  .hero-spectrum { top: -110px; height: 640px; }
+  .hero-copy h1, .hero-sub { font-size: 22px; line-height: 1.4; }
+  .hero .button { min-height: 38px; padding: 0 16px; font-size: 13px; }
+  .hero .demo { margin-top: 40px; }
+  .feature-section, .section { padding-block: 80px; }
+  .feature-heading h2, .feature-heading h2 span, .section-heading h2, .glass-section .section-heading h2 { font-size: 18px; }
+  .closing { padding-block: 96px; }
+  .closing h2 { font-size: 21px; }
+}
+.plan h3 { font-size: 32px; }
+.glass-section .flow { justify-content: flex-start; margin-inline: 0; }
+
+/* hero title typing (lp-type.js) */
+.hero-type { white-space: nowrap; }
+.hero-copy h1 .type-caret {
+  display: inline-block; width: 2px; height: .92em; margin-left: 3px; vertical-align: -.1em;
+  background: currentColor; border-radius: 1px;
+  animation: caret-blink 1.05s steps(1) infinite;
+}
+.hero-copy h1 .hero-type.is-typing .type-caret { animation: none; }
+.hero-copy h1 .type-caret.is-done { opacity: 0; animation: none; transition: opacity .4s; }
+@keyframes caret-blink { 50% { opacity: 0; } }
+
+/* ---- closing background: the hero's haze turned into a horizon.
+   The text is centred here, so the light rises from below the button instead of sitting to one side;
+   the orange is warmer than in the hero (the page ends on a dawn), and the dots fade upward into the black. */
+.closing { position: relative; isolation: isolate; overflow: hidden; padding-block: 176px 200px; }
+.closing::before, .closing::after { display: block; content: ""; position: absolute; pointer-events: none; z-index: -1; }
+.closing::before {
+  /* drawn upside down (scaleY(-1)), so "top" in these coordinates is the bottom of the section */
+  inset: 0 -6%;
+  background:
+    radial-gradient(ellipse 26% 20% at 50% 0%, rgba(239, 145, 80, .34), transparent 70%),
+    radial-gradient(ellipse 12% 9% at 50% 4%, rgba(243, 145, 116, .26), transparent 70%),
+    radial-gradient(ellipse 62% 50% at 50% -6%, rgba(47, 91, 240, .42), transparent 72%),
+    radial-gradient(ellipse 30% 30% at 50% 0%, rgba(57, 174, 203, .16), transparent 70%),
+    url("assets/hero-haze.jpg") 50% 0% / 140% auto no-repeat;
+  transform: scaleY(-1);
+  filter: brightness(1.45) saturate(.95);
+  -webkit-mask-image: radial-gradient(ellipse 70% 95% at 50% 0%, #000 18%, rgba(0, 0, 0, .5) 48%, transparent 80%);
+  mask-image: radial-gradient(ellipse 70% 95% at 50% 0%, #000 18%, rgba(0, 0, 0, .5) 48%, transparent 80%);
+  animation: closing-drift 28s ease-in-out infinite alternate;
+}
+@keyframes closing-drift {
+  from { transform: scaleY(-1) translate3d(0, 0, 0); }
+  to   { transform: scaleY(-1) translate3d(2%, -1.5%, 0) scale(1.03); }
+}
+.closing::after {
+  inset: 0;
+  background:
+    linear-gradient(90deg, transparent 18%, rgba(243, 145, 116, .55) 50%, transparent 82%) 0 100% / 100% 1px no-repeat,
+    radial-gradient(circle, rgba(225, 238, 255, .9) .6px, transparent 1px) 0 0 / 14px 14px;
+  -webkit-mask-image: radial-gradient(ellipse 58% 70% at 50% 100%, #000 0%, rgba(0, 0, 0, .7) 30%, rgba(0, 0, 0, .15) 58%, transparent 76%);
+  mask-image: radial-gradient(ellipse 58% 70% at 50% 100%, #000 0%, rgba(0, 0, 0, .7) 30%, rgba(0, 0, 0, .15) 58%, transparent 76%);
+}
+.closing .container { position: relative; }
+.closing p:not(.eyebrow) { color: var(--mute); }
+@media (prefers-reduced-motion: reduce) { .closing::before { animation: none; } }
+@media (max-width: 760px) { .closing { padding-block: 112px 136px; } }
